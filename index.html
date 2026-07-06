@@ -901,14 +901,14 @@
       </button>
     </div>
     <div class="buyer-filters">
-      <button class="buyer-filter active" onclick="filterBuyer('all', this)">全部 74</button>
-      <button class="buyer-filter" onclick="filterBuyer('医疗', this)">医疗 16</button>
-      <button class="buyer-filter" onclick="filterBuyer('制造', this)">制造 38</button>
-      <button class="buyer-filter" onclick="filterBuyer('消费', this)">消费 9</button>
-      <button class="buyer-filter" onclick="filterBuyer('化工', this)">化工 3</button>
-      <button class="buyer-filter" onclick="filterBuyer('TMT', this)">TMT 2</button>
-      <button class="buyer-filter" onclick="filterBuyer('环保', this)">环保 2</button>
-      <button class="buyer-filter" onclick="filterBuyer('其他', this)">其他 1</button>
+      <button class="buyer-filter active" data-filter="all">全部 74</button>
+      <button class="buyer-filter" data-filter="医疗">医疗 16</button>
+      <button class="buyer-filter" data-filter="制造">制造 38</button>
+      <button class="buyer-filter" data-filter="消费">消费 9</button>
+      <button class="buyer-filter" data-filter="化工">化工 3</button>
+      <button class="buyer-filter" data-filter="TMT">TMT 2</button>
+      <button class="buyer-filter" data-filter="环保">环保 2</button>
+      <button class="buyer-filter" data-filter="其他">其他 1</button>
     </div>
   </div>
 
@@ -1000,7 +1000,7 @@
     <div class="buyer-row" data-industry="制造" data-search="汇洲智能 机床 机器人 海外 上下游">
       <div class="buyer-row-industry ind-manufacture">制造</div>
       <div class="buyer-row-name" data-name="汇洲智能">汇洲智能</div>
-      <div class="buyer-row-need">国内不看，海外机床和机器人上下游相关<div class="buyer-row-note">联系人离职</div></div>
+      <div class="buyer-row-need">国内不看，海外机床和机器人上下游相关</div>
     </div>
     <div class="buyer-row" data-industry="制造" data-search="澳柯玛 制冷 冷库 小家电 机器人 家用 服务">
       <div class="buyer-row-industry ind-manufacture">制造</div>
@@ -1115,7 +1115,7 @@
     <div class="buyer-row" data-industry="制造" data-search="吉晟 汽车零部件 上市公司 迁总部 仪表 天线 T-BOX 摄像头 控制器 传感器 域控制器 微电机 并购基金">
       <div class="buyer-row-industry ind-manufacture">制造</div>
       <div class="buyer-row-name" data-name="吉晟">吉晟</div>
-      <div class="buyer-row-need">上市公司（对价10亿最好）必须能迁总部，最好是汽车零部件或相关。关注汽车仪表、天线、T-BOX、摄像头、各类控制器、传感器、域控制器、微电机等，偏硬件终端或软硬件一体<div class="buyer-row-note">在组并购基金</div></div>
+      <div class="buyer-row-need">上市公司（对价10亿最好）必须能迁总部，最好是汽车零部件或相关。关注汽车仪表、天线、T-BOX、摄像头、各类控制器、传感器、域控制器、微电机等，偏硬件终端或软硬件一体</div>
     </div>
     <div class="buyer-row" data-industry="制造" data-search="五矿产投 新材料 金属材料 靶材 高端合金 硬质合金 氟化工 矿山 盈利">
       <div class="buyer-row-industry ind-manufacture">制造</div>
@@ -1140,7 +1140,7 @@
     <div class="buyer-row" data-industry="制造" data-search="和利时 变频器 倍福 国铁 智能运维 风电 半导体PLC 自动化">
       <div class="buyer-row-industry ind-manufacture">制造</div>
       <div class="buyer-row-name" data-name="和利时">和利时</div>
-      <div class="buyer-row-need">变频器的收购项目，或者从倍福团队出来创业的项目。国铁智能运维是市场机会。风电、半导体PLC或不错的自动化项目都可以<div class="buyer-row-note">联系人：吴琼</div></div>
+      <div class="buyer-row-need">变频器的收购项目，或者从倍福团队出来创业的项目。国铁智能运维是市场机会。风电、半导体PLC或不错的自动化项目都可以</div>
     </div>
     <div class="buyer-row" data-industry="制造" data-search="海望资本 浦东科创 集成电路 高端制造 航空航天 生物医药 半导体 5000万利润">
       <div class="buyer-row-industry ind-manufacture">制造</div>
@@ -1290,7 +1290,7 @@
     <div class="buyer-row" data-industry="其他" data-search="美能能源 天然气 城燃 分布式光伏 储能 节能降碳 EPC 10亿 陕西 长三角">
       <div class="buyer-row-industry ind-other">其他</div>
       <div class="buyer-row-name" data-name="美能能源">美能能源</div>
-      <div class="buyer-row-need">城市天然气公司同业并购；冷热电"三联供"项目；分布式光伏、储能企业；节能降碳设备厂商；建筑及工业节能服务商。估值10亿以内，陕西及长三角优先，看重利润<div class="buyer-row-note">公司内部推项目很困难，老板各种犹豫</div></div>
+      <div class="buyer-row-need">城市天然气公司同业并购；冷热电"三联供"项目；分布式光伏、储能企业；节能降碳设备厂商；建筑及工业节能服务商。估值10亿以内，陕西及长三角优先，看重利润</div>
     </div>
   </div>
 </section>
@@ -1338,7 +1338,7 @@
     <div class="cat-header" onclick="toggleCat(this)">
       <div class="cat-icon" style="background:rgba(201,169,110,0.12);color:var(--accent);">📋</div>
       <div class="cat-name">重大资产重组</div>
-      <div class="cat-count">3个项目</div>
+      <div class="cat-count">2个项目</div>
       <div class="cat-line"></div>
       <div class="cat-toggle">▼</div>
     </div>
@@ -1363,16 +1363,6 @@
           <div class="project-meta"><span class="meta-tag">2026</span><span class="meta-tag">工业自动化</span><span class="meta-tag">专精特新</span></div>
         </div>
       </div>
-      <div class="project-card" onclick="toggleProject(this)">
-        <div class="project-header">
-          <div class="project-name">太原矿业项目（天首）</div>
-          <div class="project-tag tag-sell">重大资产出售</div>
-        </div>
-        <div class="project-detail">
-          重大资产出售项目。矿业并购全流程参与，驻场尽调、抽凭、函证、访谈、并购报告撰写。
-          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">矿业</span><span class="meta-tag">驻场尽调</span></div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -1381,21 +1371,11 @@
     <div class="cat-header" onclick="toggleCat(this)">
       <div class="cat-icon" style="background:rgba(96,165,250,0.12);color:var(--blue);">🏢</div>
       <div class="cat-name">控股权/控股收购</div>
-      <div class="cat-count">2个项目</div>
+      <div class="cat-count">1个项目</div>
       <div class="cat-line"></div>
       <div class="cat-toggle">▼</div>
     </div>
     <div class="cat-content show">
-      <div class="project-card" onclick="toggleProject(this)">
-        <div class="project-header">
-          <div class="project-name">稳健医疗收购平安医械</div>
-          <div class="project-tag tag-seller">卖方财务顾问</div>
-        </div>
-        <div class="project-detail">
-          稳健医疗（300888）7.52亿元控股收购湖南平安医械68.7%股权。交易结构：6.52亿收购65.55% + 1亿增资。PE约11.7倍。填补注射穿刺品类空白。
-          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">7.52亿</span><span class="meta-tag">医疗器械</span></div>
-        </div>
-      </div>
       <div class="project-card" onclick="toggleProject(this)">
         <div class="project-header">
           <div class="project-name">张恒春项目</div>
@@ -1414,7 +1394,7 @@
     <div class="cat-header" onclick="toggleCat(this)">
       <div class="cat-icon" style="background:rgba(96,165,250,0.12);color:var(--blue);">🤝</div>
       <div class="cat-name">卖方财务顾问</div>
-      <div class="cat-count">8个项目</div>
+      <div class="cat-count">9个项目</div>
       <div class="cat-line"></div>
       <div class="cat-toggle">▼</div>
     </div>
@@ -1501,16 +1481,6 @@
       </div>
       <div class="project-card" onclick="toggleProject(this)">
         <div class="project-header">
-          <div class="project-name">倍肯借壳方案</div>
-          <div class="project-tag tag-seller">交易方案</div>
-        </div>
-        <div class="project-detail">
-          为倍肯老板设计借壳上市方案。学习如何让方案对卖方有吸引力——"划算、有利可图、做不成也不会差"。
-          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">借壳上市</span></div>
-        </div>
-      </div>
-      <div class="project-card" onclick="toggleProject(this)">
-        <div class="project-header">
           <div class="project-name">鸭鸭羽绒服项目</div>
           <div class="project-tag tag-seller">卖方服务</div>
         </div>
@@ -1527,25 +1497,11 @@
     <div class="cat-header" onclick="toggleCat(this)">
       <div class="cat-icon" style="background:rgba(74,222,128,0.12);color:var(--green);">🎯</div>
       <div class="cat-name">买方财务顾问</div>
-      <div class="cat-count">12个项目</div>
+      <div class="cat-count">7个项目</div>
       <div class="cat-line"></div>
       <div class="cat-toggle">▼</div>
     </div>
     <div class="cat-content">
-      <div class="project-card" onclick="toggleProject(this)">
-        <div class="project-header">
-          <div class="project-name">国城矿业重大资产重组</div>
-          <div class="project-tag tag-closed">已交割</div>
-        </div>
-        <div class="project-detail">分两期收购国城实业100%股权，累计斥资约55亿实现全资控股。</div>
-      </div>
-      <div class="project-card" onclick="toggleProject(this)">
-        <div class="project-header">
-          <div class="project-name">收购美尔雅控制权</div>
-          <div class="project-tag tag-closed">已交割</div>
-        </div>
-        <div class="project-detail">协助买方完成美尔雅（600107）控制权收购全流程。</div>
-      </div>
       <div class="project-card" onclick="toggleProject(this)">
         <div class="project-header">
           <div class="project-name">和利时项目</div>
@@ -1564,16 +1520,6 @@
         <div class="project-detail">
           老字号食品企业并购。对接保密协议流程、财务顾问协议，推荐合适标的。
           <div class="project-meta"><span class="meta-tag">2024</span><span class="meta-tag">食品行业</span></div>
-        </div>
-      </div>
-      <div class="project-card" onclick="toggleProject(this)">
-        <div class="project-header">
-          <div class="project-name">中际联合项目</div>
-          <div class="project-tag tag-buyer">买方顾问</div>
-        </div>
-        <div class="project-detail">
-          高空作业设备龙头并购。对接意大利卖方、翻译稿件、推进项目进展。
-          <div class="project-meta"><span class="meta-tag">2024</span><span class="meta-tag">跨境并购</span></div>
         </div>
       </div>
       <div class="project-card" onclick="toggleProject(this)">
@@ -1624,16 +1570,6 @@
         <div class="project-detail">
           精密制造领域并购机会挖掘。
           <div class="project-meta"><span class="meta-tag">2025</span><span class="meta-tag">精密制造</span></div>
-        </div>
-      </div>
-      <div class="project-card" onclick="toggleProject(this)">
-        <div class="project-header">
-          <div class="project-name">柬埔寨/尼加拉瓜金矿项目</div>
-          <div class="project-tag tag-buyer">估值建模</div>
-        </div>
-        <div class="project-detail">
-          海外金矿收购。估值模型搭建、敏感性分析。
-          <div class="project-meta"><span class="meta-tag">2023</span><span class="meta-tag">矿业</span><span class="meta-tag">跨境</span></div>
         </div>
       </div>
     </div>
@@ -1763,7 +1699,7 @@
     <div class="cat-header" onclick="toggleCat(this)">
       <div class="cat-icon" style="background:rgba(74,222,128,0.08);color:var(--green);">🔍</div>
       <div class="cat-name">Deal Sourcing / 标的搜寻</div>
-      <div class="cat-count">5个项目</div>
+      <div class="cat-count">4个项目</div>
       <div class="cat-line"></div>
       <div class="cat-toggle">▼</div>
     </div>
@@ -1800,16 +1736,6 @@
       </div>
       <div class="project-card" onclick="toggleProject(this)">
         <div class="project-header">
-          <div class="project-name">AI服务器ODM厂商研究</div>
-          <div class="project-tag tag-buyer">行业研究</div>
-        </div>
-        <div class="project-detail">
-          AI算力产业链深度研究。搜索并购标的。
-          <div class="project-meta"><span class="meta-tag">2025</span><span class="meta-tag">AI</span></div>
-        </div>
-      </div>
-      <div class="project-card" onclick="toggleProject(this)">
-        <div class="project-header">
           <div class="project-name">诺博（汽车零部件）</div>
           <div class="project-tag tag-buyer">标的推荐</div>
         </div>
@@ -1826,31 +1752,11 @@
     <div class="cat-header" onclick="toggleCat(this)">
       <div class="cat-icon" style="background:rgba(201,169,110,0.08);color:var(--accent);">📊</div>
       <div class="cat-name">行业研究与估值分析</div>
-      <div class="cat-count">6个项目</div>
+      <div class="cat-count">4个项目</div>
       <div class="cat-line"></div>
       <div class="cat-toggle">▼</div>
     </div>
     <div class="cat-content">
-      <div class="project-card" onclick="toggleProject(this)">
-        <div class="project-header">
-          <div class="project-name">柬埔寨/尼加拉瓜金矿估值</div>
-          <div class="project-tag tag-buyer">估值建模</div>
-        </div>
-        <div class="project-detail">
-          海外金矿收购。估值模型搭建、敏感性分析、与技术人员沟通。
-          <div class="project-meta"><span class="meta-tag">2023</span><span class="meta-tag">矿业估值</span></div>
-        </div>
-      </div>
-      <div class="project-card" onclick="toggleProject(this)">
-        <div class="project-header">
-          <div class="project-name">三星麦迪逊估值研究</div>
-          <div class="project-tag tag-buyer">估值研究</div>
-        </div>
-        <div class="project-detail">
-          韩国医疗公司估值研究。财报翻译、EBITDA研究。
-          <div class="project-meta"><span class="meta-tag">2021</span><span class="meta-tag">EBITDA</span></div>
-        </div>
-      </div>
       <div class="project-card" onclick="toggleProject(this)">
         <div class="project-header">
           <div class="project-name">硅棒项目</div>
