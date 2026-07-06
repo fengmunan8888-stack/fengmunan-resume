@@ -736,6 +736,255 @@
     color: var(--text-dim);
     line-height: 1.7;
   }
+
+  /* ========== DEAL ROOM ========== */
+  .dealroom-demo {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  .dealroom-header {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .dealroom-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .dealroom-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    flex: 1;
+  }
+  .dealroom-badge {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(74,222,128,0.1);
+    color: var(--green);
+  }
+  .dealroom-body {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    min-height: 420px;
+  }
+  @media (max-width: 768px) {
+    .dealroom-body { grid-template-columns: 1fr; }
+  }
+  .dealroom-sidebar {
+    border-right: 1px solid var(--border);
+    padding: 20px;
+  }
+  .dealroom-main {
+    padding: 20px 28px;
+  }
+  .dealroom-section-title {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .counterparty-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .counterparty-card:hover {
+    border-color: var(--accent2);
+    background: rgba(201,169,110,0.03);
+  }
+  .counterparty-card.active {
+    border-color: var(--accent2);
+    background: rgba(201,169,110,0.05);
+  }
+  .cp-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cp-industry {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+  .cp-status {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  .status-hot { background: rgba(248,113,113,0.12); color: var(--red); }
+  .status-warm { background: rgba(251,146,60,0.12); color: var(--orange); }
+  .status-cold { background: rgba(96,165,250,0.12); color: var(--blue); }
+  .status-deal { background: rgba(74,222,128,0.12); color: var(--green); }
+  .timeline-entry {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(30,30,46,0.5);
+    display: flex;
+    gap: 14px;
+  }
+  .timeline-entry:last-child { border-bottom: none; }
+  .timeline-date {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 600;
+    min-width: 50px;
+    padding-top: 2px;
+  }
+  .timeline-content {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .timeline-content strong {
+    color: var(--text);
+  }
+  .temp-bar {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+  }
+  .temp-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+  .temp-dot.filled { background: var(--accent); }
+
+  /* ========== KNOWLEDGE SYSTEM ========== */
+  .knowledge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .knowledge-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s;
+  }
+  .knowledge-card:hover {
+    border-color: var(--accent2);
+    transform: translateY(-2px);
+  }
+  .knowledge-icon {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+  .knowledge-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .knowledge-desc {
+    font-size: 0.83rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .knowledge-stat {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 600;
+    padding: 4px 10px;
+    background: rgba(201,169,110,0.08);
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  /* ========== WORKFLOW ========== */
+  .workflow-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 40px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  .workflow-step {
+    flex: 1;
+    min-width: 200px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 20px;
+    position: relative;
+    text-align: center;
+  }
+  .workflow-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 1.2rem;
+    z-index: 1;
+  }
+  @media (max-width: 768px) {
+    .workflow-flow { flex-direction: column; }
+    .workflow-step:not(:last-child)::after {
+      content: '↓';
+      right: 50%;
+      top: auto;
+      bottom: -20px;
+      transform: translateX(50%);
+    }
+  }
+  .workflow-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+  }
+  .workflow-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .workflow-desc {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .workflow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    flex-shrink: 0;
+    color: var(--accent);
+    font-size: 1.2rem;
+  }
+
   .tag-cloud {
     display: flex;
     flex-wrap: wrap;
@@ -796,6 +1045,9 @@
   <a href="#categories">业务分类</a>
   <a href="#projects">年度项目</a>
   <a href="#skills">核心技能</a>
+  <a href="#dealroom">作战地图</a>
+  <a href="#knowledge">知识体系</a>
+  <a href="#workflow">工作流</a>
   <a href="#experience">经验反思</a>
   <a href="#deals">买卖方汇总</a>
   <a href="#pitch">跳槽陈述</a>
@@ -2398,6 +2650,215 @@
         <div class="future-note">
           <div class="future-label">A股并购价值</div>
           深度行业认知是发现价值的基础。能够快速理解行业商业逻辑，判断标的优劣。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== 作战地图 ==================== -->
+<section id="dealroom">
+  <div class="section-title">项目作战地图</div>
+  <div class="section-sub">同时推进多个并购项目 · 对手方温度跟踪 · 时间线留痕</div>
+
+  <div class="dealroom-demo">
+    <div class="dealroom-header">
+      <div class="dealroom-dot" style="background:var(--red);"></div>
+      <div class="dealroom-dot" style="background:var(--orange);"></div>
+      <div class="dealroom-dot" style="background:var(--green);"></div>
+      <div class="dealroom-title">某汽车零部件标的 · 控制权转让项目</div>
+      <div class="dealroom-badge">进行中 P1</div>
+    </div>
+    <div class="dealroom-body">
+      <div class="dealroom-sidebar">
+        <div class="dealroom-section-title">🤝 对手方 (4)</div>
+        <div class="counterparty-card active">
+          <div class="cp-name">🔥 某上市公司买方 <span style="font-size:0.65rem;color:var(--accent);">主</span></div>
+          <div class="cp-industry">汽车零部件 · 华东</div>
+          <div class="cp-status status-hot">深入推进</div>
+          <div class="temp-bar">
+            <div class="temp-dot filled"></div>
+            <div class="temp-dot filled"></div>
+            <div class="temp-dot filled"></div>
+            <div class="temp-dot filled"></div>
+            <div class="temp-dot"></div>
+          </div>
+        </div>
+        <div class="counterparty-card">
+          <div class="cp-name">🟠 某产业基金</div>
+          <div class="cp-industry">私募股权 · 北京</div>
+          <div class="cp-status status-warm">协议签署中</div>
+          <div class="temp-bar">
+            <div class="temp-dot filled"></div>
+            <div class="temp-dot filled"></div>
+            <div class="temp-dot filled"></div>
+            <div class="temp-dot"></div>
+            <div class="temp-dot"></div>
+          </div>
+        </div>
+        <div class="counterparty-card">
+          <div class="cp-name">⚪ 某区域同业</div>
+          <div class="cp-industry">汽车零部件 · 华南</div>
+          <div class="cp-status status-cold">初接触</div>
+          <div class="temp-bar">
+            <div class="temp-dot filled"></div>
+            <div class="temp-dot"></div>
+            <div class="temp-dot"></div>
+            <div class="temp-dot"></div>
+            <div class="temp-dot"></div>
+          </div>
+        </div>
+        <div class="counterparty-card">
+          <div class="cp-name">⚫ 某战略投资者</div>
+          <div class="cp-industry">综合 · 深圳</div>
+          <div class="cp-status" style="background:rgba(120,120,140,0.12);color:#888;">已否</div>
+          <div class="temp-bar">
+            <div class="temp-dot"></div>
+            <div class="temp-dot"></div>
+            <div class="temp-dot"></div>
+            <div class="temp-dot"></div>
+            <div class="temp-dot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="dealroom-main">
+        <div class="dealroom-section-title">📓 项目时间线</div>
+        <div class="timeline-entry">
+          <div class="timeline-date">05-22</div>
+          <div class="timeline-content"><strong>与主买方电话会</strong>，确认估值区间分歧点，对方对PE 12-15x有疑虑，需准备可比案例支撑</div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-date">05-19</div>
+          <div class="timeline-content"><strong>完成标的财务资料初筛</strong>，已整理进知识库。标的近三年营收CAGR 18%，净利润率12%</div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-date">05-12</div>
+          <div class="timeline-content"><strong>项目立项</strong>，自动建文件夹「2026_05_某标的」，录入Deal Room</div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-date">05-08</div>
+          <div class="timeline-content"><strong>收到卖方委托</strong>，录入标的库，初步接触3家潜在买方</div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-date">05-03</div>
+          <div class="timeline-content"><strong>卖方首次接触</strong>，了解标的概况，初步判断符合团队覆盖行业</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== 知识体系 ==================== -->
+<section id="knowledge">
+  <div class="section-title">知识管理体系</div>
+  <div class="section-sub">把碎片信息变成可检索的并购资产 · 一问可查 · 带出处</div>
+
+  <div class="knowledge-grid">
+    <div class="knowledge-card">
+      <div class="knowledge-icon">📥</div>
+      <div class="knowledge-title">买方需求库</div>
+      <div class="knowledge-desc">谁在找什么行业、什么规模、要不要控制权——结构化存下来，随时调取。74家上市公司/机构需求，行业大类筛选 + 对接人一目了然。</div>
+      <div class="knowledge-stat">74条需求 · 10大行业</div>
+    </div>
+    <div class="knowledge-card">
+      <div class="knowledge-icon">🎯</div>
+      <div class="knowledge-title">标的库</div>
+      <div class="knowledge-desc">可收购/待出售的标的画像，行业、亮点、关键数据一处汇总。每个标的自动生成一句话画像，点标签即聚同行。</div>
+      <div class="knowledge-stat">40+项目 · 多行业覆盖</div>
+    </div>
+    <div class="knowledge-card">
+      <div class="knowledge-icon">🧠</div>
+      <div class="knowledge-title">第二大脑</div>
+      <div class="knowledge-desc">各类资料入库，随时一问带出处。Word/PDF/Excel/图片OCR/语音转写/聊天记录——全量向量化，按分类浏览。</div>
+      <div class="knowledge-stat">法规 · 案例 · 研报 · 公告</div>
+    </div>
+    <div class="knowledge-card">
+      <div class="knowledge-icon">📊</div>
+      <div class="knowledge-title">行业数据库</div>
+      <div class="knowledge-desc">医疗器械、新能源、半导体、消费等重点行业持续跟踪。可比交易、估值区间、政策动态——做方案时直接调用。</div>
+      <div class="knowledge-stat">多行业 · 持续更新</div>
+    </div>
+    <div class="knowledge-card">
+      <div class="knowledge-icon">🔗</div>
+      <div class="knowledge-title">知识图谱关联</div>
+      <div class="knowledge-desc">买方需求 ↔ 标的 ↔ 项目 ↔ 文件 ↔ 待办——一处更新处处同步。问"某行业有哪些买方"，直接拉出完整清单。</div>
+      <div class="knowledge-stat">全链路打通</div>
+    </div>
+    <div class="knowledge-card">
+      <div class="knowledge-icon">🔍</div>
+      <div class="knowledge-title">智能问答溯源</div>
+      <div class="knowledge-desc">问：最近某行业有哪些控制权转让案例？答：根据知识库……[案例库·公告]，估值区间约……[研报]——每条结论都带出处。</div>
+      <div class="knowledge-stat">一问可查 · 可溯源</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== 工作流 ==================== -->
+<section id="workflow">
+  <div class="section-title">并购工作流</div>
+  <div class="section-sub">从Deal Sourcing到Close的全链路方法论</div>
+
+  <div class="workflow-flow">
+    <div class="workflow-step">
+      <div class="workflow-num">1</div>
+      <div class="workflow-label">Deal Sourcing</div>
+      <div class="workflow-desc">系统性搜寻标的/cold call/行业扫描/买方需求匹配</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">2</div>
+      <div class="workflow-label">初筛与建联</div>
+      <div class="workflow-desc">标的初判/保密协议/NDA签署/双方初步接触</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">3</div>
+      <div class="workflow-label">尽职调查</div>
+      <div class="workflow-desc">财务/法律/业务尽调/底稿管理/驻场访谈/函证</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">4</div>
+      <div class="workflow-label">估值与方案</div>
+      <div class="workflow-desc">估值建模/交易结构设计/对赌条款/支付安排</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">5</div>
+      <div class="workflow-label">谈判推进</div>
+      <div class="workflow-desc">多方协调/条款博弈/SPA起草/合规审核</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">6</div>
+      <div class="workflow-label">Close & 督导</div>
+      <div class="workflow-desc">交割/持续督导/信息披露/后续整合支持</div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;">
+    <div class="section-title" style="font-size:1.1rem;">我的工作方法论</div>
+    <div class="pitch-grid" style="margin-top:24px;">
+      <div class="pitch-card">
+        <div class="pitch-icon">📋</div>
+        <div class="pitch-label">项目管理：Deal Room思维</div>
+        <div class="pitch-text">
+          每个项目建独立档案，对手方温度跟踪（热/温/冷），时间线日记记录每次进展。几十个项目并行不乱，随时回看全貌。
+        </div>
+      </div>
+      <div class="pitch-card">
+        <div class="pitch-icon">🧠</div>
+        <div class="pitch-label">知识管理：结构化入库</div>
+        <div class="pitch-text">
+          买方需求、标的画像、行业研究——全部结构化存储，一问可查。不是"文件夹里找文件"，而是"问一句话就出答案"。
+        </div>
+      </div>
+      <div class="pitch-card">
+        <div class="pitch-icon">🤖</div>
+        <div class="pitch-label">AI协作：提效不替代</div>
+        <div class="pitch-text">
+          用AI处理重复性工作：整理资料、查公告、起草文档、做PPT。把精力留给判断、谈判、关系维护这些高价值环节。
         </div>
       </div>
     </div>
