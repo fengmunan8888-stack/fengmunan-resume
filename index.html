@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冯木楠 - 并购专家 | 能力与经验全景</title>
+<style>
+  :root {
+    --bg: #08080d;
+    --card: #101018;
+    --card-hover: #181824;
+    --accent: #c9a96e;
+    --accent2: #8b6f47;
+    --accent-glow: rgba(201,169,110,0.15);
+    --text: #e8e6e3;
+    --text-dim: #7a7a8a;
+    --border: #1e1e2e;
+    --green: #4ade80;
+    --red: #f87171;
+    --blue: #60a5fa;
+    --purple: #a78bfa;
+    --orange: #fb923c;
+    --gold-gradient: linear-gradient(135deg, #c9a96e 0%, #e8d5a8 50%, #c9a96e 100%);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ========== HERO ========== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    background: radial-gradient(ellipse at 50% 20%, rgba(201,169,110,0.06) 0%, transparent 60%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .hero-name {
+    font-size: 4rem;
+    font-weight: 200;
+    letter-spacing: 0.5em;
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+  .hero-title {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    letter-spacing: 0.8em;
+    margin-bottom: 60px;
+    font-weight: 300;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-size: 3rem;
+    font-weight: 200;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-top: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ========== NAV ========== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8,8,13,0.88);
+    backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    padding: 12px 20px;
+    flex-wrap: wrap;
+  }
+  .nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    transition: all 0.25s;
+    letter-spacing: 0.08em;
+  }
+  .nav a:hover, .nav a.active {
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  /* ========== SECTIONS ========== */
+  section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 24px;
+  }
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.15em;
+  }
+  .section-sub {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 56px;
+    letter-spacing: 0.08em;
+  }
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
+  /* ========== COMPLETED DEALS ========== */
+  .deals-hero {
+    background: linear-gradient(180deg, rgba(201,169,110,0.04) 0%, transparent 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 100px 0 80px;
+  }
+  .deals-hero section { padding-top: 0; padding-bottom: 0; }
+  .deal-completed-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+  }
+  .deal-completed-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .deal-completed-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold-gradient);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .deal-completed-card:hover {
+    border-color: var(--accent2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+  .deal-completed-card:hover::before { opacity: 1; }
+  .deal-completed-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(74,222,128,0.1);
+    color: var(--green);
+    margin-bottom: 14px;
+    letter-spacing: 0.05em;
+  }
+  .deal-completed-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+  .deal-completed-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .deal-completed-role {
+    font-size: 0.78rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  .deal-completed-desc {
+    font-size: 0.83rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .deal-completed-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .deal-completed-tag {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(201,169,110,0.08);
+    color: var(--accent);
+    border: 1px solid rgba(201,169,110,0.15);
+  }
+
+  /* ========== YEAR BLOCKS ========== */
+  .year-block { margin-bottom: 40px; }
+  .year-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .year-badge {
+    background: var(--accent);
+    color: var(--bg);
+    padding: 4px 18px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    min-width: 70px;
+    text-align: center;
+  }
+  .year-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .year-toggle {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+  }
+  .year-toggle.open { transform: rotate(180deg); }
+  .year-content {
+    display: none;
+    padding-left: 86px;
+  }
+  .year-content.show { display: block; }
+
+  /* ========== PROJECT CARDS ========== */
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .project-card:hover {
+    background: var(--card-hover);
+    border-color: var(--accent2);
+    transform: translateX(4px);
+  }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .project-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .project-tag {
+    font-size: 0.72rem;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  .tag-buyer { background: rgba(74,222,128,0.12); color: var(--green); }
+  .tag-seller { background: rgba(96,165,250,0.12); color: var(--blue); }
+  .tag-both { background: rgba(167,139,250,0.12); color: var(--purple); }
+  .tag-advisory { background: rgba(251,146,60,0.12); color: var(--orange); }
+  .tag-closed { background: rgba(201,169,110,0.15); color: var(--accent); }
+  .project-detail {
+    display: none;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+  }
+  .project-card.expanded .project-detail { display: block; }
+  .project-meta {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .meta-tag {
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.04);
+    color: var(--text-dim);
+  }
+
+  /* ========== SKILLS / CATEGORIES ========== */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+  }
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .skill-card:hover {
+    border-color: var(--accent2);
+    transform: translateY(-2px);
+  }
+  .skill-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .skill-title .arrow {
+    font-size: 0.65rem;
+    transition: transform 0.3s;
+    color: var(--text-dim);
+  }
+  .skill-card.expanded .skill-title .arrow { transform: rotate(90deg); }
+  .skill-summary {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+  .skill-detail {
+    display: none;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+  .skill-card.expanded .skill-detail { display: block; }
+  .case-item {
+    background: rgba(201,169,110,0.04);
+    border-left: 2px solid var(--accent2);
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+  .case-label {
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .future-note {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: rgba(74,222,128,0.05);
+    border-left: 2px solid var(--green);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.82rem;
+    color: var(--green);
+    line-height: 1.7;
+  }
+  .future-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  /* ========== CATEGORY BLOCKS ========== */
+  .cat-block {
+    margin-bottom: 40px;
+  }
+  .cat-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .cat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .cat-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .cat-count {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    background: rgba(255,255,255,0.04);
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+  }
+  .cat-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .cat-toggle {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+  }
+  .cat-toggle.open { transform: rotate(180deg); }
+  .cat-content {
+    display: none;
+    padding-left: 50px;
+  }
+  .cat-content.show { display: block; }
+
+  /* ========== BUYER NEEDS ========== */
+  .buyer-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .buyer-toolbar-left {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .buyer-search {
+    position: relative;
+  }
+  .buyer-search input {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px 8px 34px;
+    color: var(--text);
+    font-size: 0.82rem;
+    width: 220px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .buyer-search input:focus {
+    border-color: var(--accent2);
+  }
+  .buyer-search input::placeholder {
+    color: var(--text-dim);
+  }
+  .buyer-search::before {
+    content: '🔍';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    pointer-events: none;
+  }
+  .buyer-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.25s;
+    white-space: nowrap;
+  }
+  .buyer-toggle-btn:hover {
+    border-color: var(--accent2);
+    color: var(--accent);
+  }
+  .buyer-toggle-btn.active {
+    background: var(--accent-glow);
+    border-color: var(--accent2);
+    color: var(--accent);
+  }
+  .buyer-filters {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .buyer-filter {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .buyer-filter:hover, .buyer-filter.active {
+    border-color: var(--accent2);
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+  .buyer-list-header {
+    display: grid;
+    grid-template-columns: 60px 140px 1fr;
+    gap: 16px;
+    padding: 10px 18px;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4px;
+  }
+  .buyer-row {
+    display: grid;
+    grid-template-columns: 60px 140px 1fr;
+    gap: 16px;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(30,30,46,0.5);
+    transition: all 0.2s;
+    align-items: start;
+  }
+  .buyer-row:hover {
+    background: rgba(201,169,110,0.03);
+  }
+  .buyer-row:last-child {
+    border-bottom: none;
+  }
+  .buyer-row-industry {
+    font-size: 0.72rem;
+    padding: 3px 0;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .ind-medical { background: rgba(74,222,128,0.1); color: var(--green); }
+  .ind-manufacture { background: rgba(96,165,250,0.1); color: var(--blue); }
+  .ind-consume { background: rgba(167,139,250,0.1); color: var(--purple); }
+  .ind-chemical { background: rgba(251,146,60,0.1); color: var(--orange); }
+  .ind-env { background: rgba(74,222,128,0.06); color: #6ee7b7; }
+  .ind-tmt { background: rgba(96,165,250,0.06); color: #93c5fd; }
+  .ind-other { background: rgba(255,255,255,0.04); color: var(--text-dim); }
+  .buyer-row-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    transition: all 0.3s;
+    line-height: 1.5;
+  }
+  .buyer-row-name.hidden-name {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(138,138,138,0.4);
+    user-select: none;
+  }
+  .buyer-row-need {
+    font-size: 0.84rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+  .buyer-row-note {
+    font-size: 0.75rem;
+    color: var(--orange);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .buyer-row.hidden-row {
+    display: none;
+  }
+  .buyer-count-bar {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    padding: 0 18px;
+  }
+  .buyer-count-bar span {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  @media (max-width: 768px) {
+    .buyer-list-header { display: none; }
+    .buyer-row {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    .buyer-search input { width: 160px; }
+  }
+
+  /* ========== EXPERIENCE ========== */
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .exp-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    transition: all 0.25s;
+  }
+  .exp-card:hover { border-color: var(--accent2); }
+  .exp-type {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .exp-improve { background: rgba(74,222,128,0.12); color: var(--green); }
+  .exp-reflection { background: rgba(251,146,60,0.12); color: var(--orange); }
+  .exp-eq { background: rgba(167,139,250,0.12); color: var(--purple); }
+  .exp-content {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+  }
+
+  /* ========== DEALS SUMMARY ========== */
+  .deal-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .deal-col-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+  }
+  .buyer-title { color: var(--green); border-color: var(--green); }
+  .seller-title { color: var(--blue); border-color: var(--blue); }
+  .deal-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 8px;
+    transition: all 0.25s;
+  }
+  .deal-item:hover { border-color: var(--accent2); }
+  .deal-name {
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 3px;
+  }
+  .deal-desc {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  /* ========== PITCH ========== */
+  .pitch-section {
+    background: linear-gradient(135deg, rgba(201,169,110,0.06) 0%, rgba(8,8,13,1) 100%);
+    border: 1px solid var(--accent2);
+    border-radius: 16px;
+    padding: 48px;
+    margin-top: 40px;
+  }
+  .pitch-title {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--accent);
+    margin-bottom: 32px;
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+  .pitch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .pitch-card {
+    background: rgba(8,8,13,0.6);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+  }
+  .pitch-icon {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  .pitch-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .pitch-text {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+    justify-content: center;
+  }
+  .tag-pill {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    background: rgba(201,169,110,0.08);
+    color: var(--accent);
+    border: 1px solid rgba(201,169,110,0.15);
+  }
+  .contact-bar {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+  .contact-bar .name {
+    color: var(--accent);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 8px;
+    letter-spacing: 0.15em;
+  }
+
+  @media (max-width: 768px) {
+    .deal-completed-grid { grid-template-columns: 1fr; }
+    .deal-section { grid-template-columns: 1fr; }
+    .hero-stats { gap: 30px; }
+    .hero-name { font-size: 2.2rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .year-content, .cat-content { padding-left: 0; }
+    .pitch-section { padding: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-name">冯 木 楠</div>
+  <div class="hero-title">并 购 专 家 · 财 务 顾 问</div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">年并购从业经验</div></div>
+    <div class="stat"><div class="stat-num">40+</div><div class="stat-label">参与项目</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">已交割项目</div></div>
+    <div class="stat"><div class="stat-num">74</div><div class="stat-label">买方需求库</div></div>
+    <div class="stat"><div class="stat-num">10+</div><div class="stat-label">行业覆盖</div></div>
+  </div>
+</div>
+
+<nav class="nav">
+  <a href="#closed">已交割项目</a>
+  <a href="#buyer-needs">买方需求</a>
+  <a href="#categories">业务分类</a>
+  <a href="#projects">年度项目</a>
+  <a href="#skills">核心技能</a>
+  <a href="#experience">经验反思</a>
+  <a href="#deals">买卖方汇总</a>
+  <a href="#pitch">跳槽陈述</a>
+</nav>
+
+<!-- ==================== 已完成交割项目 ==================== -->
+<div class="deals-hero" id="closed">
+<section>
+  <div class="section-title">已交割项目</div>
+  <div class="section-sub">从推进到Close · 6个已成交项目</div>
+
+  <div class="deal-completed-grid">
+    <div class="deal-completed-card">
+      <div class="deal-completed-badge">已交割</div>
+      <div class="deal-completed-name">国城矿业重大资产重组</div>
+      <div class="deal-completed-role">买方财务顾问 · 2025-2026</div>
+      <div class="deal-completed-desc">国城矿业（000688）分两期收购国城实业100%股权。第一期2025年12月完成，60%股权对价31.68亿元；第二期2026年5月完成，40%股权对价23.68亿元。累计斥资约55亿元实现全资控股。估值60.03亿，增值率207.63%。EPS由0.97→1.33元/股。</div>
+      <div class="deal-completed-meta">
+        <span class="deal-completed-tag">累计~55亿</span>
+        <span class="deal-completed-tag">重大资产重组</span>
+        <span class="deal-completed-tag">矿业</span>
+        <span class="deal-completed-tag">关联交易</span>
+      </div>
+    </div>
+
+    <div class="deal-completed-card">
+      <div class="deal-completed-badge">已交割</div>
+      <div class="deal-completed-name">和利时电机出售</div>
+      <div class="deal-completed-role">买方财务顾问 · 2026</div>
+      <div class="deal-completed-desc">奕帆传动拟现金收购北京和利时电机87.07%股权，构成重大资产重组。和利时电机为国家级专精特新"小巨人"企业，产品覆盖半导体、机器人等高端制造领域。</div>
+      <div class="deal-completed-meta">
+        <span class="deal-completed-tag">重大资产重组</span>
+        <span class="deal-completed-tag">工业自动化</span>
+        <span class="deal-completed-tag">专精特新</span>
+      </div>
+    </div>
+
+    <div class="deal-completed-card">
+      <div class="deal-completed-badge">已交割</div>
+      <div class="deal-completed-name">兴汉网际出售给大豪科技</div>
+      <div class="deal-completed-role">卖方财务顾问 · 2023</div>
+      <div class="deal-completed-desc">兴汉网际出售给大豪科技（603025），完成资产交割。涉及网络安全设备领域的产业并购，协助卖方完成退出。</div>
+      <div class="deal-completed-meta">
+        <span class="deal-completed-tag">卖方退出</span>
+        <span class="deal-completed-tag">网络安全</span>
+        <span class="deal-completed-tag">产业并购</span>
+      </div>
+    </div>
+
+    <div class="deal-completed-card">
+      <div class="deal-completed-badge">已交割</div>
+      <div class="deal-completed-name">稳健医疗收购平安医械</div>
+      <div class="deal-completed-role">卖方财务顾问 · 2022</div>
+      <div class="deal-completed-desc">稳健医疗（300888）7.52亿元控股收购湖南平安医械68.7%股权。交易结构：6.52亿收购65.55% + 1亿增资。标的主营注射器、输液器等穿刺类产品，PE约11.7倍。</div>
+      <div class="deal-completed-meta">
+        <span class="deal-completed-tag">7.52亿</span>
+        <span class="deal-completed-tag">卖方财务顾问</span>
+        <span class="deal-completed-tag">医疗器械</span>
+      </div>
+    </div>
+
+    <div class="deal-completed-card">
+      <div class="deal-completed-badge">已交割</div>
+      <div class="deal-completed-name">收购美尔雅控制权</div>
+      <div class="deal-completed-role">买方财务顾问 · 2022</div>
+      <div class="deal-completed-desc">协助买方完成美尔雅（600107）控制权收购。涵盖交易方案设计、估值分析、尽调协调及合规流程推进，涉及上市公司控股权收购全流程。</div>
+      <div class="deal-completed-meta">
+        <span class="deal-completed-tag">控制权收购</span>
+        <span class="deal-completed-tag">A股上市公司</span>
+        <span class="deal-completed-tag">全流程</span>
+      </div>
+    </div>
+
+    <div class="deal-completed-card">
+      <div class="deal-completed-badge">已交割</div>
+      <div class="deal-completed-name">太原矿业项目（天首）</div>
+      <div class="deal-completed-role">卖方财务顾问 · 2022</div>
+      <div class="deal-completed-desc">重大资产出售项目。矿业并购全流程参与。驻场尽调、抽凭、函证、访谈、并购报告撰写。第一个完整参与的项目，从底稿到报告全面锻炼。</div>
+      <div class="deal-completed-meta">
+        <span class="deal-completed-tag">重大资产出售</span>
+        <span class="deal-completed-tag">矿业</span>
+        <span class="deal-completed-tag">驻场尽调</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ==================== 买方需求 ==================== -->
+<section id="buyer-needs">
+  <div class="section-title">买方需求库</div>
+  <div class="section-sub">74家上市公司/机构并购需求 · 需求详情直接展示 · 买方可一键隐藏</div>
+
+  <div class="buyer-toolbar">
+    <div class="buyer-toolbar-left">
+      <div class="buyer-search">
+        <input type="text" id="buyerSearch" placeholder="搜索需求关键词..." oninput="searchBuyer(this.value)">
+      </div>
+      <button class="buyer-toggle-btn" onclick="toggleAllBuyerNames()" id="nameToggleBtn">
+        👁 隐藏买方名称
+      </button>
+    </div>
+    <div class="buyer-filters">
+      <button class="buyer-filter active" onclick="filterBuyer('all', this)">全部 74</button>
+      <button class="buyer-filter" onclick="filterBuyer('医疗', this)">医疗 16</button>
+      <button class="buyer-filter" onclick="filterBuyer('制造', this)">制造 38</button>
+      <button class="buyer-filter" onclick="filterBuyer('消费', this)">消费 9</button>
+      <button class="buyer-filter" onclick="filterBuyer('化工', this)">化工 3</button>
+      <button class="buyer-filter" onclick="filterBuyer('TMT', this)">TMT 2</button>
+      <button class="buyer-filter" onclick="filterBuyer('环保', this)">环保 2</button>
+      <button class="buyer-filter" onclick="filterBuyer('其他', this)">其他 1</button>
+    </div>
+  </div>
+
+  <div class="buyer-count-bar" id="buyerCountBar">显示 <span>74</span> 条需求</div>
+
+  <div class="buyer-list-header">
+    <div>行业</div>
+    <div>买方</div>
+    <div>需求内容</div>
+  </div>
+
+  <div id="buyerList">
+    <div class="buyer-row" data-industry="医疗" data-search="稳健医疗 低值耗材 海外品牌 手术包 生命科学 干细胞 介入器械">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="稳健医疗">稳健医疗</div>
+      <div class="buyer-row-need">1、国内低值耗材公司；2、海外低值耗材品牌与有关渠道；3、可集成进入手术包类产品；4、生命科学和生物材料（干细胞、脱细胞等）。更新：今年主要看海外渠道和品牌的公司，国内看高值介入器械及耗材</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="英洛华 轮椅 电机">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="英洛华">英洛华</div>
+      <div class="buyer-row-need">轮椅、电机等项目收购</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="中红医疗 低值耗材 高值耗材 骨科 血管介入 口腔 血液净化 康复设备 体外诊断 IVD POCT">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="中红医疗">中红医疗</div>
+      <div class="buyer-row-need">1、有技术含量且属细分领域头部的低值耗材，优先出口渠道；2、高值耗材（骨科植入、血管介入、口腔医用耗材、血液净化类）；3、医用医疗设备（康复设备、病房护理设备、诊断设备等）；4、体外诊断（免疫诊断、分子诊断和POCT）</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="同仁堂 中药饮片 净利润率 院内销售 国资 集采">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="同仁堂">同仁堂</div>
+      <div class="buyer-row-need">并购中药饮片：收入3亿以上，净利润率10%以上；销售渠道相对分散，以院内销售为主；有较强销售团队。并购后有国资身份集采更有竞争力，可更名为北京同仁堂某某饮片公司。避开亳州和安国的企业</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="华润三九 骨科 呼吸 肠胃 妇科 儿科 独家品种 卫生护理">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="华润三九">华润三九</div>
+      <div class="buyer-row-need">骨科、呼吸、肠胃、妇科、儿科大品种（市场前三）、有市场知名度的独家品种；妇科相关的卫生护理用品，需要品牌比较有知名度</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="明德生物 IVD 凝血 免疫 分子 仪器 试剂">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="明德生物">明德生物</div>
+      <div class="buyer-row-need">优先考虑IVD方向，凝血免疫分子等，尤其偏好仪器类标的（明德试剂较强）。营收1亿以上，有利润</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="威高 口腔 正畸 种植 修复 洁利康 偏后期">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="威高">威高</div>
+      <div class="buyer-row-need">口腔医疗都在看：正畸、种植、修复，上下游。体量偏大，偏后期有收入最好有利润。自己有洁利康，从产业链上下游或不同产业方向横向都先看看</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="康基医疗 微创外科 手术耗材 妇科 泌尿 普外 胸外科 呼吸 消化 镜子 创新器械 术中影像">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="康基医疗（港股）">康基医疗（港股）</div>
+      <div class="buyer-row-need">聚焦微创外科，提供手术耗材、设备等解决方案。科室覆盖妇科、泌尿、普外、胸外科，覆盖3500+家医院（1000+家三甲）。偏好：呼吸、消化镜子、外科创新器械、术中影像设备</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="新里程集团 医药 医疗器械 控股权 中成药 独家品种 医疗服务 三级医院 具身智能 康复 养老 机器人">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="新里程集团">新里程集团</div>
+      <div class="buyer-row-need">1、医药/医疗器械上市公司控股权并购，市值50亿以下；2、医疗器械：诊断/治疗/康复设备，利润2000万+；3、中成药企业，最好有独家品种；4、省会三级以上营利性医疗机构，收入2亿+，盈利；5、康复/养老场景的具身智能机器人本体</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="广州数科 数字安全 医疗 器械 信息化 服务 利润">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="广州数科">广州数科</div>
+      <div class="buyer-card-detail">今年重点是医疗板块，除了药不看，器械、信息化和服务方向的都可以，要有两三千万利润的。全国都可以，广东优先</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="珍视明 滴眼液 眼科 五官科 皮肤科 OTC 产品型">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="珍视明">珍视明</div>
+      <div class="buyer-row-need">并购估值1亿以上，上不封顶，超过10亿需换股。1、滴眼液标的，偏好OTC；2、泛眼科标的，有利润，产品型，10-15x PE；3、五官科及皮肤科，有利润，产品型</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="祥生医疗 超声 影像设备">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="祥生医疗">祥生医疗</div>
+      <div class="buyer-row-need">超声影像设备</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="德福资本 医疗 营养品 保健品 控股权 出海">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="德福资本">德福资本</div>
+      <div class="buyer-row-need">医疗、营养品、保健品，控股权收购为主，喜欢大标的，可帮忙出海</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="中国通用技术 央企 机床刀具 医用材料 IPO">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="中国通用技术">中国通用技术</div>
+      <div class="buyer-row-need">央企，在找机床刀具类或者医用材料类的机会，上市非上市都行，核心看标的质地，符合IPO条件的最好</div>
+    </div>
+    <div class="buyer-row" data-industry="医疗" data-search="顺丰 物流 合同物流 冷链 国际跨境物流">
+      <div class="buyer-row-industry ind-medical">医疗</div>
+      <div class="buyer-row-name" data-name="顺丰">顺丰</div>
+      <div class="buyer-row-need">狭义物流领域，跟集团主业高度相关，主要包括合同物流、冷链、国际跨境物流等赛道</div>
+    </div>
+
+    <div class="buyer-row" data-industry="制造" data-search="汇洲智能 机床 机器人 海外 上下游">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="汇洲智能">汇洲智能</div>
+      <div class="buyer-row-need">国内不看，海外机床和机器人上下游相关<div class="buyer-row-note">联系人离职</div></div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="澳柯玛 制冷 冷库 小家电 机器人 家用 服务">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="澳柯玛">澳柯玛</div>
+      <div class="buyer-row-need">制冷类要求大型冷库以及与制冷技术有关的标的；小家电要求有前景比如家用机器人、服务机器人；医疗类包括器械和耗材</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="天合光能 储能 逆变器 PCS 碳化硅 氮化镓 ITO靶材 锂电池 光伏 10亿 投资">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="天合光能">天合光能</div>
+      <div class="buyer-row-need">自身上下游，优先PCS储能逆变器标的，碳化硅氮化镓，ITO靶材。锂电池及光伏产业链上成熟产品，技术路线清晰。10亿估值以内，可以亏损。也可以投资，10%+股份及一个董事会席位</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="中际联合 新能源 风力 储能 氢能 电网 配网 净利润 毛利率">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="中际联合">中际联合</div>
+      <div class="buyer-row-need">新能源产业链发电侧（风力、储能、氢能）、电网侧（配网、电网相关）的相关机会，有净利润且最好毛利净利率高一些</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="厦门建发 资源 农产品 矿产 纸浆 木材 橡胶 加工 仓储 物流 新能源 电池 硅料 光伏">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="厦门建发">厦门建发</div>
+      <div class="buyer-row-need">海外看资源类：农产品、矿产、纸浆、木材、橡胶等及配套加工、物流仓储。国内看加工资源、仓储物流（大豆/菜籽/小麦/玉米加工厂、钢铁/铜冶炼/铝厂）；新能源类：电池厂、硅料厂、光伏厂等</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="斯迪克 光学显示 新能源电池 2-5亿 不发股">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="斯迪克">斯迪克</div>
+      <div class="buyer-row-need">光学显示、新能源电池核心部件。规模2-5亿元，小一些，不考虑发股</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="京城控股 机器人 AGV AMR 机床 卧加 直驱 航空航天 机器视觉 焊接 谐波减速器 精密丝杠 电传动 国企">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="京城控股">京城控股</div>
+      <div class="buyer-row-need">北京市国企，旗下有A+H上市公司京城股份。主要投资方向：机器人（伺服、控制、减速器等核心软硬件）、AGV、AMR、机床（卧加、直驱、航空航天领域）、工业机器视觉、自动化焊接产线、谐波减速器、精密丝杠、电传动等</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="广电电气 充电桩 碳数字化 光伏逆变器 储能PCS 户储 数字孪生 火电改造 3-6亿 10亿估值">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="广电电气">广电电气</div>
+      <div class="buyer-row-need">（1）充电桩（2）碳数字化（3）出海光伏逆变器或储能PCS（4）出海户储（5）配电数字孪生（6）灵活性用电如火电改造。营业收入3-6亿，几千万净利润，估值20亿以内</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="东方中科 电子测试测量 中科院 智慧城市 商业航天 检测">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="东方中科">东方中科</div>
+      <div class="buyer-row-need">电子测试测量领域中国科学院下属唯一一家上市公司。目前主要看软件倾向智慧城市，检测偏好商业航天领域</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="万业企业 房地产转型 泛半导体 设备 材料 零部件 3-10亿营收 3000万-1亿利润 20-50亿估值 换股">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="万业企业">万业企业</div>
+      <div class="buyer-row-need">房地产公司转型。寻求国内外泛半导体领域（设备、材料、零部件），营收3-10亿，净利润3000万-1亿，估值20-50亿，能接受换股+现金</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="公牛集团 新能源 充电桩 储能 AI 智能灯光 智能锁 扫地机器人 出海 海外">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="公牛集团">公牛集团</div>
+      <div class="buyer-row-need">1）新能源：充电桩、储能。2）AI+：智能灯光照明、家用电器、智能锁，布局其他AI+领域。3）出海：海外家居（转换器、开关、智能锁）和新能源新增品类</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="综艺股份 芯片 半导体 设备 原材料 封测 1-3亿营收 1000万利润 5-20亿估值">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="综艺股份">综艺股份</div>
+      <div class="buyer-row-need">收购芯片上下游公司，设备、原材料、封测都可以。1-3亿营收，最好1000+w净利润。估值5-20亿都行。老板着急让公司贴上半导体标签</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="TCL 中环 光伏 半导体 晶圆 华星光电 面板 材料 涂胶 显影剂 国产化">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="TCL">TCL</div>
+      <div class="buyer-row-need">TCL中环看光伏上下游材料，重点关注半导体领域，明确需要并购半导体晶圆厂（6寸也可以看），10-几十亿。华星光电收购面板上下游，上游材料国产化率都比较低</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="东方电气 能源装备 光伏 组件 电池 机械 新材料 特种陶瓷 5亿">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="东方电气">东方电气</div>
+      <div class="buyer-row-need">收购能源装备相关标的，光伏（组件、电池、设备、辅材、支架）、机械、新材料都能看。对价不超过5亿元，动力电池不看，想要特种陶瓷</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="洛阳国资 国宏 宁德时代 新能源 源网荷储 智能电网 电站 50亿市值 非国资">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="洛阳国资-国宏">洛阳国资-国宏</div>
+      <div class="buyer-row-need">洛阳宁德时代做招商配套和产业协同。上市公司市值50亿左右，主业新能源类、源网荷储、智能电网类，最好持有电站类资产，非国资控股，非壳公司，非亏损</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="容百科技 电池 冶炼 回收 国内外">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="容百科技">容百科技</div>
+      <div class="buyer-row-need">电池冶炼回收，体量不限，国内外都能看</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="方大集团 航空 医药 钢铁 材料 矿石 碳碳 石墨烯 碳纤维 无人机">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="方大集团">方大集团</div>
+      <div class="buyer-row-need">关注集团下面航空、医药、钢铁、材料、矿石、商业产业链上下游项目并购。重点：航空维修大型货运无人机、碳碳复合材料、石墨烯、碳纤维</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="海尔 工业互联网 工业软件 机器人 自动化 新时达">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="海尔工业互联网基金">海尔工业互联网基金</div>
+      <div class="buyer-row-need">目前并购主要看工业软件（生产制造类）的上市公司；储备机器人、工业自动化领域的标的；25年收购了上市公司新时达</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="陕煤胜帮 生化分析仪 湿电子化学品 显示材料 合成生物 化工 派林生物 尤夫 1000万利润">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="陕煤胜帮">陕煤胜帮</div>
+      <div class="buyer-row-need">陕煤下面的投资基金，控股了派林生物和尤夫股份。收购生化分析仪、湿电子化学品、显示材料、合成生物、化工等。净利润1000w+</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="玫德集团 钢管 沟槽管件 阀门 水表 电表 泵 3亿">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="玫德集团">玫德集团</div>
+      <div class="buyer-row-need">国内外钢管、沟槽管件、阀门、水表、电表、泵类公司，营收3亿以上为佳</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="达瑞电子 消费电子 手机 声学 MR 碳纤维 复合材料 新能源 汽车电子 连接器 特斯拉 华为 比亚迪">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="达瑞电子">达瑞电子</div>
+      <div class="buyer-row-need">方向1：消费电子（手机、声学、MR），复合材料、上游材料、结构件、模组。方向2：新能源（汽车电子、动力电池、储能），结构件、新材料。优先收购汽车高压/高速连接器厂商，需有头部主机厂客户</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="江苏创元集团 江浙沪 洁净环保 汽车零部件 智能制造 轴承 电机 1000万利润">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="江苏创元集团">江苏创元集团</div>
+      <div class="buyer-row-need">投资地域：江浙沪。行业范围：洁净环保、汽车零部件、智能制造（如轴承、电机）。净利润1000w+，上市公司和非上市公司都能看</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="锐锢商城 电动工具 园林工具 仪表仪器 照明 工业润滑油 粘合剂 2000万利润">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="锐锢商城">锐锢商城（电商独角兽）</div>
+      <div class="buyer-row-need">电动工具、园林工具、仪表仪器、照明类等传统制造业公司，利润2千万以上；3000w利润左右的工业润滑油和工业粘合剂工厂</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="吉晟 汽车零部件 上市公司 迁总部 仪表 天线 T-BOX 摄像头 控制器 传感器 域控制器 微电机 并购基金">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="吉晟">吉晟</div>
+      <div class="buyer-row-need">上市公司（对价10亿最好）必须能迁总部，最好是汽车零部件或相关。关注汽车仪表、天线、T-BOX、摄像头、各类控制器、传感器、域控制器、微电机等，偏硬件终端或软硬件一体<div class="buyer-row-note">在组并购基金</div></div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="五矿产投 新材料 金属材料 靶材 高端合金 硬质合金 氟化工 矿山 盈利">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="五矿产投">五矿产投</div>
+      <div class="buyer-row-need">和五矿集团主业有强协同。主要看新材料领域：金属材料（小金属材料、靶材、高端合金、硬质合金等）、高端氟化工材料以及跟矿山相关的材料应用领域，要求标的盈利</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="好利来科技 电路电力保护 光伏储能 新能源汽车 AI 机器人 集成电路 新材料 4亿估值 6-8倍PE">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="好利来科技">好利来科技</div>
+      <div class="buyer-row-need">电路电力保护、光伏储能、新能源汽车部件、人工智能、具身机器人、集成电路、新材料等科技领域，以先进制造业为主要目标，轻资产审慎考虑。整体估值4亿以内，PE 6-8倍</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="康尼电机 新能源汽车 零部件 连接器 电机 控制 2000万-1亿利润">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="康尼电机">康尼电机</div>
+      <div class="buyer-row-need">主要关注新能源汽车零部件机会，如高速高频连接器、电机、控制等产品，标的需有核心竞争力。净利润2kw-1亿区间</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="创维投资 新一代信息技术 新能源 元器件 材料 装备 显示 能源电子 物联网">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="创维投资">创维投资</div>
+      <div class="buyer-row-need">专注于新一代信息技术和新能源两个行业上游关键元器件、材料和装备三个领域的投资。打造新型显示、能源电子、物联网上游产业链三个特色优势投资领域</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="和利时 变频器 倍福 国铁 智能运维 风电 半导体PLC 自动化">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="和利时">和利时</div>
+      <div class="buyer-row-need">变频器的收购项目，或者从倍福团队出来创业的项目。国铁智能运维是市场机会。风电、半导体PLC或不错的自动化项目都可以<div class="buyer-row-note">联系人：吴琼</div></div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="海望资本 浦东科创 集成电路 高端制造 航空航天 生物医药 半导体 5000万利润">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="海望资本">海望资本</div>
+      <div class="buyer-row-need">浦东科创集团旗下的国资并购基金，覆盖集成电路、高端制造、航空航天和生物医药。优先半导体，最好净利润5000万以上</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="欣旺达 锂电池 原材料 消费3c 智能硬件 域控制器 投资并购">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="欣旺达">欣旺达</div>
+      <div class="buyer-row-need">锂电池上游原材料、消费3C方向智能硬件，域控制器。投资并购都可以看</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="领益 消费电子 AR模组 ODM AI服务器 商业航天 电池 客户 5000万营收 亏损也行">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="领益智造">领益智造</div>
+      <div class="buyer-row-need">收购：最看重客户，规模营收5000万以上就OK，亏损也行。AR模组ODM；AI服务器ODM（更关注，要求有设计能力）。投资：商业航天硬件，电池</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="广电计量 检测 体量大">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="广电计量">广电计量</div>
+      <div class="buyer-row-need">体量稍微大点的标的。体量大的和我们相关性的要求可以适当小点（无相关性也不行）</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="超晶科技 同业 下游 1000万-2000万利润">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="超晶科技">超晶科技</div>
+      <div class="buyer-row-need">同业或者下游，1-2kw净利润</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="元禾控股 机床 刀具 工控软件 投资 1亿">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="元禾控股">元禾控股</div>
+      <div class="buyer-row-need">并购看机床、刀具、工控软件等。投资要求单笔投资额最好不低于1亿</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="鸿合科技 奇瑞基金 新质生产力">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="鸿合科技">鸿合科技</div>
+      <div class="buyer-row-need">奇瑞基金收购，看收购主业相关及新质生产力并购，投资只看新质生产力</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="震坤行 自动化工具 黏胶 刀具 1000万利润 3-10亿营收 10亿对价">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="震坤行">震坤行</div>
+      <div class="buyer-row-need">自动化工具、黏胶、刀具。净利润1kw以上，营收3-10亿。对价不超过10亿</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="华脉科技 光纤 4000万利润">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="华脉科技">华脉科技</div>
+      <div class="buyer-row-need">主业光纤相关，4kw净利润以上为优</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="北汽产投 新质生产力 主业">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="北汽产投">北汽产投</div>
+      <div class="buyer-row-need">新质生产力投资，主业相关并购</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="吉利 碧鸿 新质生产力">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="吉利-碧鸿">吉利-碧鸿</div>
+      <div class="buyer-row-need">新质生产力投资</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="国际精密 泵马达 精密制造 投资并购">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="国际精密">国际精密</div>
+      <div class="buyer-row-need">泵马达及精密制造相关，投资并购均可</div>
+    </div>
+    <div class="buyer-row" data-industry="制造" data-search="莲花健康 AI服务">
+      <div class="buyer-row-industry ind-manufacture">制造</div>
+      <div class="buyer-row-name" data-name="莲花健康">莲花健康</div>
+      <div class="buyer-row-need">AI服务相关</div>
+    </div>
+
+    <div class="buyer-row" data-industry="消费" data-search="大胜达 包装 瓦楞纸 烟包 酒包 消费电子 化妆品 珠三角 京津冀">
+      <div class="buyer-row-industry ind-consume">消费</div>
+      <div class="buyer-row-name" data-name="大胜达">大胜达</div>
+      <div class="buyer-row-need">国内看发达城市圈（珠三角或京津冀周边）的瓦楞纸或者高毛利包装企业：瓦楞纸包、烟包、酒包、消费电子、消费品、化妆品类包装</div>
+    </div>
+    <div class="buyer-row" data-industry="消费" data-search="洪兴股份 内衣 护理 睡眠 品牌 1000万利润 5-6亿估值">
+      <div class="buyer-row-industry ind-consume">消费</div>
+      <div class="buyer-row-name" data-name="洪兴股份">洪兴股份</div>
+      <div class="buyer-row-need">收购内衣/护理/睡眠类资产，有一定品牌知名度，净利润1000万以上，估值五六亿元以下</div>
+    </div>
+    <div class="buyer-row" data-industry="消费" data-search="58同城 房产 招聘 二手车 生活服务 养老 3C维修 海外 Craigslist 10亿">
+      <div class="buyer-row-industry ind-consume">消费</div>
+      <div class="buyer-row-name" data-name="58同城">58同城</div>
+      <div class="buyer-row-need">国内看补足交易闭环的：技工/普工招聘、养老服务、3C维修。海外看主营业务模式类似、要盈利的，做高毛利流量分发。人民币和美元都有，国内看10亿以内</div>
+    </div>
+    <div class="buyer-row" data-industry="消费" data-search="顾家家居 家具 客餐厅 卧室">
+      <div class="buyer-row-industry ind-consume">消费</div>
+      <div class="buyer-row-name" data-name="顾家家居">顾家家居</div>
+      <div class="buyer-row-need">客餐厅、卧室空间的相关家具，不智能没问题。盈利区间没有明确要求</div>
+    </div>
+    <div class="buyer-row" data-industry="消费" data-search="海南农垦 食品加工 种业 橡胶 全国渠道 2亿营收 上市公司">
+      <div class="buyer-row-industry ind-consume">消费</div>
+      <div class="buyer-row-name" data-name="海南农垦">海南农垦</div>
+      <div class="buyer-row-need">价格敏感；食品加工希望有全国渠道布局；营收2亿元以上、经营稳定、有技术实力的种业公司；橡胶产业链标的，10亿营收以上为佳。优先上市公司</div>
+    </div>
+    <div class="buyer-row" data-industry="消费" data-search="文昌鸡 黄羽鸡 餐饮">
+      <div class="buyer-row-industry ind-consume">消费</div>
+      <div class="buyer-row-name" data-name="文昌鸡">文昌鸡</div>
+      <div class="buyer-row-need">黄羽鸡，黄羽鸡餐饮</div>
+    </div>
+    <div class="buyer-row" data-industry="消费" data-search="华宝 调味品 保健品 原料">
+      <div class="buyer-row-industry ind-consume">消费</div>
+      <div class="buyer-row-name" data-name="华宝">华宝</div>
+      <div class="buyer-row-need">调味品、保健品原料</div>
+    </div>
+    <div class="buyer-row" data-industry="消费" data-search="鸭鸭 内衣 品牌">
+      <div class="buyer-row-industry ind-consume">消费</div>
+      <div class="buyer-row-name" data-name="鸭鸭">鸭鸭</div>
+      <div class="buyer-row-need">内衣相关，要求有品牌</div>
+    </div>
+
+    <div class="buyer-row" data-industry="化工" data-search="航天投资控股 精细化工 橡胶 胶粘剂 阻燃剂 军工助剂 航天 10亿">
+      <div class="buyer-row-industry ind-chemical">化工</div>
+      <div class="buyer-row-name" data-name="航天投资控股">航天投资控股（中国航天）</div>
+      <div class="buyer-row-need">精细化工方向，标的体量最好小一些，在10亿元以内；净利润为正；行业在橡胶、胶粘剂、阻燃剂、军工助剂、航天上下游相关范围内</div>
+    </div>
+    <div class="buyer-row" data-industry="化工" data-search="盛虹集团 炼化 精细化工 电子材料 东方盛虹 10亿 毛利率30%">
+      <div class="buyer-row-industry ind-chemical">化工</div>
+      <div class="buyer-row-name" data-name="盛虹集团">盛虹集团</div>
+      <div class="buyer-row-need">下属上市公司东方盛虹，集团主业是炼化往下游衍生精细化工、电子材料等。估值10亿内，产品毛利率30%以上，有一定规模</div>
+    </div>
+    <div class="buyer-row" data-industry="化工" data-search="中化三建 化工园区 百亩 产能 5亿估值">
+      <div class="buyer-row-industry ind-chemical">化工</div>
+      <div class="buyer-row-name" data-name="中化三建">中化三建</div>
+      <div class="buyer-row-need">寻找化工园区，占地百亩左右，涉化的，产品没关系，主要为研究所产品后续商业化找产能。公司运作正常，核心团队能继续经营就好。5亿内估值，7-8年能回本</div>
+    </div>
+
+    <div class="buyer-row" data-industry="环保" data-search="重庆水务 三峰环境 环保 资源化 工业废水 污泥 固废 危废 餐厨 再生水 3000万利润 发达城市">
+      <div class="buyer-row-industry ind-env">环保</div>
+      <div class="buyer-row-name" data-name="重庆水务&三峰环境">重庆水务 & 三峰环境</div>
+      <div class="buyer-row-need">净利润3000w以上，上市公司非上市公司均可，偏好发达城市。围绕"资源化"布局：工业废水/污泥/固废/危废资源化、餐厨/厨余垃圾处理、再生水、管网修复、医废/建筑垃圾/飞灰/炉渣资源化等</div>
+    </div>
+    <div class="buyer-row" data-industry="环保" data-search="兴泸投资 泸州 城投 垃圾焚烧 固废 物业 培育上市 千亿">
+      <div class="buyer-row-industry ind-env">环保</div>
+      <div class="buyer-row-name" data-name="兴泸投资">兴泸投资</div>
+      <div class="buyer-row-need">泸州市最大城投公司，集团规模超千亿，利润30亿。主要寻求垃圾焚烧、固废处置和物业服务的并购项目来扩大旗下企业规模，从而培育企业上市</div>
+    </div>
+
+    <div class="buyer-row" data-industry="TMT" data-search="博彦科技 算力运营 IT运维 数据库迁移 ERP 央企国企 智慧农业 1000万-5000万营收 30%毛利 10%净利">
+      <div class="buyer-row-industry ind-tmt">TMT</div>
+      <div class="buyer-row-name" data-name="博彦科技">博彦科技</div>
+      <div class="buyer-row-need">主营业务是算力运营、IT运维、数据库迁移、ERP等解决方案，客户是央企国企（能源、制造、航天军工等），另智慧农业解决方案。营收1000万-5000万，毛利率不低于30%，净利率10%左右，现金投资收购</div>
+    </div>
+    <div class="buyer-row" data-industry="TMT" data-search="鼎捷软件 数字化软件 客户 5000万营收">
+      <div class="buyer-row-industry ind-tmt">TMT</div>
+      <div class="buyer-row-name" data-name="鼎捷软件">鼎捷软件</div>
+      <div class="buyer-row-need">营收5千万以上的数字化软件，具备较好的客户资源</div>
+    </div>
+
+    <div class="buyer-row" data-industry="其他" data-search="美能能源 天然气 城燃 分布式光伏 储能 节能降碳 EPC 10亿 陕西 长三角">
+      <div class="buyer-row-industry ind-other">其他</div>
+      <div class="buyer-row-name" data-name="美能能源">美能能源</div>
+      <div class="buyer-row-need">城市天然气公司同业并购；冷热电"三联供"项目；分布式光伏、储能企业；节能降碳设备厂商；建筑及工业节能服务商。估值10亿以内，陕西及长三角优先，看重利润<div class="buyer-row-note">公司内部推项目很困难，老板各种犹豫</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="categories">
+  <div class="section-title">并购业务类型全景</div>
+  <div class="section-sub">按交易类型分类 · 覆盖A股并购全链条</div>
+
+  <!-- 1. 控制权收购 -->
+  <div class="cat-block">
+    <div class="cat-header" onclick="toggleCat(this)">
+      <div class="cat-icon" style="background:rgba(74,222,128,0.12);color:var(--green);">⚖</div>
+      <div class="cat-name">上市公司控制权收购</div>
+      <div class="cat-count">2个项目</div>
+      <div class="cat-line"></div>
+      <div class="cat-toggle">▼</div>
+    </div>
+    <div class="cat-content show">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">收购美尔雅控制权</div>
+          <div class="project-tag tag-closed">已交割</div>
+        </div>
+        <div class="project-detail">
+          协助买方完成美尔雅（600107）控制权收购。涵盖交易方案设计、估值分析、尽调协调及合规流程推进。涉及上市公司控股权收购的全流程实操。
+          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">A股</span><span class="meta-tag">控制权</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">棒杰项目（A吃A）</div>
+          <div class="project-tag tag-advisory">并购重组</div>
+        </div>
+        <div class="project-detail">
+          A股上市公司收购A股上市公司。底稿查看、项目跟进会议、现场工作。首次接触A吃A交易结构。
+          <div class="project-meta"><span class="meta-tag">2021</span><span class="meta-tag">A吃A</span><span class="meta-tag">并购重组</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 重大资产重组 -->
+  <div class="cat-block">
+    <div class="cat-header" onclick="toggleCat(this)">
+      <div class="cat-icon" style="background:rgba(201,169,110,0.12);color:var(--accent);">📋</div>
+      <div class="cat-name">重大资产重组</div>
+      <div class="cat-count">3个项目</div>
+      <div class="cat-line"></div>
+      <div class="cat-toggle">▼</div>
+    </div>
+    <div class="cat-content show">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">国城矿业重大资产重组</div>
+          <div class="project-tag tag-closed">已交割</div>
+        </div>
+        <div class="project-detail">
+          国城矿业（000688）分两期收购国城实业100%股权。第一期2025年12月完成，60%股权对价31.68亿元；第二期2026年5月完成，40%股权对价23.68亿元。累计斥资约55亿元实现全资控股。估值60.03亿，增值率207.63%。EPS由0.97→1.33元/股。
+          <div class="project-meta"><span class="meta-tag">2025-2026</span><span class="meta-tag">累计~55亿</span><span class="meta-tag">矿业</span><span class="meta-tag">关联交易</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">和利时电机出售</div>
+          <div class="project-tag tag-closed">已交割</div>
+        </div>
+        <div class="project-detail">
+          奕帆传动拟现金收购和利时电机87.07%股权，构成重大资产重组。和利时电机为国家级专精特新"小巨人"企业。
+          <div class="project-meta"><span class="meta-tag">2026</span><span class="meta-tag">工业自动化</span><span class="meta-tag">专精特新</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">太原矿业项目（天首）</div>
+          <div class="project-tag tag-sell">重大资产出售</div>
+        </div>
+        <div class="project-detail">
+          重大资产出售项目。矿业并购全流程参与，驻场尽调、抽凭、函证、访谈、并购报告撰写。
+          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">矿业</span><span class="meta-tag">驻场尽调</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 控股收购 -->
+  <div class="cat-block">
+    <div class="cat-header" onclick="toggleCat(this)">
+      <div class="cat-icon" style="background:rgba(96,165,250,0.12);color:var(--blue);">🏢</div>
+      <div class="cat-name">控股权/控股收购</div>
+      <div class="cat-count">2个项目</div>
+      <div class="cat-line"></div>
+      <div class="cat-toggle">▼</div>
+    </div>
+    <div class="cat-content show">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">稳健医疗收购平安医械</div>
+          <div class="project-tag tag-seller">卖方财务顾问</div>
+        </div>
+        <div class="project-detail">
+          稳健医疗（300888）7.52亿元控股收购湖南平安医械68.7%股权。交易结构：6.52亿收购65.55% + 1亿增资。PE约11.7倍。填补注射穿刺品类空白。
+          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">7.52亿</span><span class="meta-tag">医疗器械</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">张恒春项目</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          中药老字号品牌并购顾问。完成内核会、流程推进及材料准备。深入理解中药行业并购逻辑与品牌价值评估。
+          <div class="project-meta"><span class="meta-tag">2026</span><span class="meta-tag">中药</span><span class="meta-tag">品牌并购</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 卖方财务顾问 -->
+  <div class="cat-block">
+    <div class="cat-header" onclick="toggleCat(this)">
+      <div class="cat-icon" style="background:rgba(96,165,250,0.12);color:var(--blue);">🤝</div>
+      <div class="cat-name">卖方财务顾问</div>
+      <div class="cat-count">8个项目</div>
+      <div class="cat-line"></div>
+      <div class="cat-toggle">▼</div>
+    </div>
+    <div class="cat-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">兴汉网际出售给大豪科技</div>
+          <div class="project-tag tag-closed">已交割</div>
+        </div>
+        <div class="project-detail">
+          兴汉网际出售给大豪科技（603025），完成资产交割。涉及网络安全设备领域的产业并购，协助卖方完成退出。
+          <div class="project-meta"><span class="meta-tag">2023</span><span class="meta-tag">网络安全</span><span class="meta-tag">产业并购</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">稳健医疗收购平安医械</div>
+          <div class="project-tag tag-seller">卖方财务顾问</div>
+        </div>
+        <div class="project-detail">
+          稳健医疗（300888）7.52亿元控股收购湖南平安医械68.7%股权。卖方财务顾问角色。
+          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">7.52亿</span><span class="meta-tag">医疗器械</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">太原矿业项目（天首）</div>
+          <div class="project-tag tag-sell">重大资产出售</div>
+        </div>
+        <div class="project-detail">
+          重大资产出售项目。矿业并购全流程参与，驻场尽调、抽凭、函证、访谈、并购报告撰写。
+          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">矿业</span><span class="meta-tag">驻场尽调</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">保安医疗材料项目</div>
+          <div class="project-tag tag-seller">卖方顾问</div>
+        </div>
+        <div class="project-detail">
+          医疗耗材大单品公司出售顾问。完成公司介绍报告、财务报表分析、税务研究、交易方案设计。对接三鑫、海尔等多家买方。
+          <div class="project-meta"><span class="meta-tag">2024</span><span class="meta-tag">医疗耗材</span><span class="meta-tag">交易方案</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">叶之梦项目</div>
+          <div class="project-tag tag-seller">卖方顾问</div>
+        </div>
+        <div class="project-detail">
+          医疗器械公司出售。从破产信息搜集到保密协议签署全流程。推荐悦心健康、稳健医疗等买方。
+          <div class="project-meta"><span class="meta-tag">2024</span><span class="meta-tag">医疗器械</span><span class="meta-tag">破产重组</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">康达检测项目</div>
+          <div class="project-tag tag-seller">卖方服务</div>
+        </div>
+        <div class="project-detail">
+          检测行业公司推介。行业研究、买方匹配、公司介绍材料制作。拓展IPO之外的并购退出路径。
+          <div class="project-meta"><span class="meta-tag">2024</span><span class="meta-tag">检测行业</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">永和项目</div>
+          <div class="project-tag tag-seller">卖方材料</div>
+        </div>
+        <div class="project-detail">
+          负责公司介绍PPT制作，多轮打磨精修。从行业、业务、财务多维度呈现标的亮点。
+          <div class="project-meta"><span class="meta-tag">2026</span><span class="meta-tag">推介材料</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">凌鼎智能 - AGV设备</div>
+          <div class="project-tag tag-seller">卖方服务</div>
+        </div>
+        <div class="project-detail">
+          智能物流AGV设备公司并购标的推荐。筛选潜在买方并推进对接。
+          <div class="project-meta"><span class="meta-tag">2025</span><span class="meta-tag">智能制造</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">倍肯借壳方案</div>
+          <div class="project-tag tag-seller">交易方案</div>
+        </div>
+        <div class="project-detail">
+          为倍肯老板设计借壳上市方案。学习如何让方案对卖方有吸引力——"划算、有利可图、做不成也不会差"。
+          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">借壳上市</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">鸭鸭羽绒服项目</div>
+          <div class="project-tag tag-seller">卖方服务</div>
+        </div>
+        <div class="project-detail">
+          知名品牌并购项目。旁听会议、撰写会议纪要、海外可比交易研究。学习消费品行业并购特点。
+          <div class="project-meta"><span class="meta-tag">2021</span><span class="meta-tag">消费品</span><span class="meta-tag">品牌并购</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 买方财务顾问 -->
+  <div class="cat-block">
+    <div class="cat-header" onclick="toggleCat(this)">
+      <div class="cat-icon" style="background:rgba(74,222,128,0.12);color:var(--green);">🎯</div>
+      <div class="cat-name">买方财务顾问</div>
+      <div class="cat-count">12个项目</div>
+      <div class="cat-line"></div>
+      <div class="cat-toggle">▼</div>
+    </div>
+    <div class="cat-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">国城矿业重大资产重组</div>
+          <div class="project-tag tag-closed">已交割</div>
+        </div>
+        <div class="project-detail">分两期收购国城实业100%股权，累计斥资约55亿实现全资控股。</div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">收购美尔雅控制权</div>
+          <div class="project-tag tag-closed">已交割</div>
+        </div>
+        <div class="project-detail">协助买方完成美尔雅（600107）控制权收购全流程。</div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">和利时项目</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          工业自动化龙头企业并购。出差调研、股权披露案例研究、仪器仪表与智慧运维工业软件标的筛选。
+          <div class="project-meta"><span class="meta-tag">2026</span><span class="meta-tag">工业自动化</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">桂发祥项目</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          老字号食品企业并购。对接保密协议流程、财务顾问协议，推荐合适标的。
+          <div class="project-meta"><span class="meta-tag">2024</span><span class="meta-tag">食品行业</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">中际联合项目</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          高空作业设备龙头并购。对接意大利卖方、翻译稿件、推进项目进展。
+          <div class="project-meta"><span class="meta-tag">2024</span><span class="meta-tag">跨境并购</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">科麦食品 x 莲花健康</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          食品行业并购。为科麦寻找合适买方，推送给莲花健康。
+          <div class="project-meta"><span class="meta-tag">2023</span><span class="meta-tag">食品行业</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">海尔医疗板块合作</div>
+          <div class="project-tag tag-buyer">买方服务</div>
+        </div>
+        <div class="project-detail">
+          为海尔医疗板块推荐标的。理解上市公司产业并购逻辑。
+          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">医疗</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">领益智造标的推荐</div>
+          <div class="project-tag tag-buyer">买方服务</div>
+        </div>
+        <div class="project-detail">
+          为消费电子龙头推荐太阳翼、德融科技等标的。
+          <div class="project-meta"><span class="meta-tag">2026</span><span class="meta-tag">消费电子</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">密思特 x 国际精密</div>
+          <div class="project-tag tag-both">撮合交易</div>
+        </div>
+        <div class="project-detail">
+          精密制造领域并购撮合。拜访密思特签订财务顾问协议。
+          <div class="project-meta"><span class="meta-tag">2026</span><span class="meta-tag">精密制造</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">久久精工项目</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          精密制造领域并购机会挖掘。
+          <div class="project-meta"><span class="meta-tag">2025</span><span class="meta-tag">精密制造</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">柬埔寨/尼加拉瓜金矿项目</div>
+          <div class="project-tag tag-buyer">估值建模</div>
+        </div>
+        <div class="project-detail">
+          海外金矿收购。估值模型搭建、敏感性分析。
+          <div class="project-meta"><span class="meta-tag">2023</span><span class="meta-tag">矿业</span><span class="meta-tag">跨境</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. 跨境并购 -->
+  <div class="cat-block">
+    <div class="cat-header" onclick="toggleCat(this)">
+      <div class="cat-icon" style="background:rgba(167,139,250,0.12);color:var(--purple);">🌐</div>
+      <div class="cat-name">跨境并购</div>
+      <div class="cat-count">5个项目</div>
+      <div class="cat-line"></div>
+      <div class="cat-toggle">▼</div>
+    </div>
+    <div class="cat-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">中际联合项目（意大利）</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          高空作业设备龙头并购。对接意大利卖方、翻译稿件、推进项目进展。
+          <div class="project-meta"><span class="meta-tag">2024</span><span class="meta-tag">意大利</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">Giuliano海外标的（意大利）</div>
+          <div class="project-tag tag-both">跨境并购</div>
+        </div>
+        <div class="project-detail">
+          与意大利卖方顾问对接。邮件翻译、会议纪要、标的分析。首次深度参与跨境并购全流程。
+          <div class="project-meta"><span class="meta-tag">2021</span><span class="meta-tag">意大利</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">三星麦迪逊（韩国标的）</div>
+          <div class="project-tag tag-buyer">估值研究</div>
+        </div>
+        <div class="project-detail">
+          韩国医疗公司估值研究。财报翻译、EBITDA研究、估值数据分析。
+          <div class="project-meta"><span class="meta-tag">2021</span><span class="meta-tag">韩国</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">柬埔寨/尼加拉瓜金矿项目</div>
+          <div class="project-tag tag-buyer">估值建模</div>
+        </div>
+        <div class="project-detail">
+          海外金矿收购。估值模型搭建、敏感性分析。
+          <div class="project-meta"><span class="meta-tag">2023</span><span class="meta-tag">东南亚</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">聚益科海外项目</div>
+          <div class="project-tag tag-both">撮合交易</div>
+        </div>
+        <div class="project-detail">
+          跨境并购立项与推进。学习汇报材料规范。
+          <div class="project-meta"><span class="meta-tag">2023</span><span class="meta-tag">跨境</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. 借壳上市 -->
+  <div class="cat-block">
+    <div class="cat-header" onclick="toggleCat(this)">
+      <div class="cat-icon" style="background:rgba(251,146,60,0.12);color:var(--orange);">🔄</div>
+      <div class="cat-name">借壳上市 / SPAC</div>
+      <div class="cat-count">1个项目</div>
+      <div class="cat-line"></div>
+      <div class="cat-toggle">▼</div>
+    </div>
+    <div class="cat-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">倍肯借壳方案</div>
+          <div class="project-tag tag-seller">交易方案</div>
+        </div>
+        <div class="project-detail">
+          为倍肯老板设计借壳上市方案。"划算、有利可图、做不成也不会差"。
+          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">借壳上市</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. 持续督导 -->
+  <div class="cat-block">
+    <div class="cat-header" onclick="toggleCat(this)">
+      <div class="cat-icon" style="background:rgba(255,255,255,0.06);color:var(--text-dim);">📑</div>
+      <div class="cat-name">持续督导</div>
+      <div class="cat-count">2个项目</div>
+      <div class="cat-line"></div>
+      <div class="cat-toggle">▼</div>
+    </div>
+    <div class="cat-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">国城项目（持续督导）</div>
+          <div class="project-tag tag-advisory">持续督导</div>
+        </div>
+        <div class="project-detail">
+          矿业上市公司持续督导。底稿归档、现场工作、反馈回复。
+          <div class="project-meta"><span class="meta-tag">2026</span><span class="meta-tag">矿业</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">美尔雅持续督导</div>
+          <div class="project-tag tag-advisory">持续督导</div>
+        </div>
+        <div class="project-detail">
+          新三板公司持续督导。底稿整理、季报审核、合规流程。
+          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">新三板</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Deal Sourcing -->
+  <div class="cat-block">
+    <div class="cat-header" onclick="toggleCat(this)">
+      <div class="cat-icon" style="background:rgba(74,222,128,0.08);color:var(--green);">🔍</div>
+      <div class="cat-name">Deal Sourcing / 标的搜寻</div>
+      <div class="cat-count">5个项目</div>
+      <div class="cat-line"></div>
+      <div class="cat-toggle">▼</div>
+    </div>
+    <div class="cat-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">医疗器械标的系统性搜寻</div>
+          <div class="project-tag tag-buyer">Deal Sourcing</div>
+        </div>
+        <div class="project-detail">
+          系统性cold call/cold email建联。覆盖7大细分领域，联系50+企业。
+          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">医疗</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">麦克传感项目</div>
+          <div class="project-tag tag-buyer">标的筛选</div>
+        </div>
+        <div class="project-detail">
+          传感器行业标的深度研究。寻找联系方式并建立对接通道。
+          <div class="project-meta"><span class="meta-tag">2025</span><span class="meta-tag">传感器</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">KOC标的分析与推荐</div>
+          <div class="project-tag tag-buyer">研究推荐</div>
+        </div>
+        <div class="project-detail">
+          行业研究与标的筛选推荐。
+          <div class="project-meta"><span class="meta-tag">2025</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">AI服务器ODM厂商研究</div>
+          <div class="project-tag tag-buyer">行业研究</div>
+        </div>
+        <div class="project-detail">
+          AI算力产业链深度研究。搜索并购标的。
+          <div class="project-meta"><span class="meta-tag">2025</span><span class="meta-tag">AI</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">诺博（汽车零部件）</div>
+          <div class="project-tag tag-buyer">标的推荐</div>
+        </div>
+        <div class="project-detail">
+          标的清单整理与推荐。
+          <div class="project-meta"><span class="meta-tag">汽车零部件</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. 行业研究 -->
+  <div class="cat-block">
+    <div class="cat-header" onclick="toggleCat(this)">
+      <div class="cat-icon" style="background:rgba(201,169,110,0.08);color:var(--accent);">📊</div>
+      <div class="cat-name">行业研究与估值分析</div>
+      <div class="cat-count">6个项目</div>
+      <div class="cat-line"></div>
+      <div class="cat-toggle">▼</div>
+    </div>
+    <div class="cat-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">柬埔寨/尼加拉瓜金矿估值</div>
+          <div class="project-tag tag-buyer">估值建模</div>
+        </div>
+        <div class="project-detail">
+          海外金矿收购。估值模型搭建、敏感性分析、与技术人员沟通。
+          <div class="project-meta"><span class="meta-tag">2023</span><span class="meta-tag">矿业估值</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">三星麦迪逊估值研究</div>
+          <div class="project-tag tag-buyer">估值研究</div>
+        </div>
+        <div class="project-detail">
+          韩国医疗公司估值研究。财报翻译、EBITDA研究。
+          <div class="project-meta"><span class="meta-tag">2021</span><span class="meta-tag">EBITDA</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">硅棒项目</div>
+          <div class="project-tag tag-buyer">财务分析</div>
+        </div>
+        <div class="project-detail">
+          新能源材料行业并购。财务信息整理、收购前后市值变化统计。
+          <div class="project-meta"><span class="meta-tag">2023</span><span class="meta-tag">新能源</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">莲花健康交易方案</div>
+          <div class="project-tag tag-buyer">交易方案</div>
+        </div>
+        <div class="project-detail">
+          对照兴汉方案撰写。学习重大与非重大交易的方案差异。
+          <div class="project-meta"><span class="meta-tag">2022</span><span class="meta-tag">对赌条款</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">AI服务器ODM厂商研究</div>
+          <div class="project-tag tag-buyer">行业研究</div>
+        </div>
+        <div class="project-detail">
+          AI算力产业链深度研究。搜索并购标的。
+          <div class="project-meta"><span class="meta-tag">2025</span><span class="meta-tag">AI服务器</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">Bantig项目（跨境合作）</div>
+          <div class="project-tag tag-both">合作方案</div>
+        </div>
+        <div class="project-detail">
+          与国外合作方联合推进。设计分成方案（30%）。
+          <div class="project-meta"><span class="meta-tag">2023</span><span class="meta-tag">跨境合作</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== 年度项目 ==================== -->
+<section id="projects">
+  <div class="section-title">年度重要项目</div>
+  <div class="section-sub">按时间线纵览 · 点击查看详情</div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggleYear(this)">
+      <div class="year-badge">2026</div>
+      <div class="year-line"></div>
+      <div class="year-toggle">▼</div>
+    </div>
+    <div class="year-content show">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">国城矿业重大资产重组2期</div>
+          <div class="project-tag tag-closed">已交割</div>
+        </div>
+        <div class="project-detail">
+          23.68亿元现金收购国城实业剩余40%股权，实现全资控股。累计斥资约55亿。EPS由0.97→1.33元/股。
+          <div class="project-meta"><span class="meta-tag">重大资产重组</span><span class="meta-tag">矿业</span><span class="meta-tag">关联交易</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">和利时电机出售</div>
+          <div class="project-tag tag-closed">已交割</div>
+        </div>
+        <div class="project-detail">
+          奕帆传动收购和利时电机87.07%股权，构成重大资产重组。国家级专精特新"小巨人"企业。
+          <div class="project-meta"><span class="meta-tag">重大资产重组</span><span class="meta-tag">工业自动化</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">张恒春项目</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          中药老字号品牌并购顾问。完成内核会、流程推进及材料准备。
+          <div class="project-meta"><span class="meta-tag">中药行业</span><span class="meta-tag">品牌并购</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">和利时项目</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          工业自动化龙头企业并购。出差调研、标的筛选。
+          <div class="project-meta"><span class="meta-tag">工业自动化</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">永和项目</div>
+          <div class="project-tag tag-seller">卖方材料</div>
+        </div>
+        <div class="project-detail">
+          负责公司介绍PPT制作，多轮打磨精修。
+          <div class="project-meta"><span class="meta-tag">推介材料</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">密思特 x 国际精密</div>
+          <div class="project-tag tag-both">撮合交易</div>
+        </div>
+        <div class="project-detail">
+          精密制造领域并购撮合。签订财务顾问协议。
+          <div class="project-meta"><span class="meta-tag">精密制造</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">国城项目（持续督导）</div>
+          <div class="project-tag tag-advisory">持续督导</div>
+        </div>
+        <div class="project-detail">
+          矿业上市公司持续督导。底稿归档、现场工作、反馈回复。
+          <div class="project-meta"><span class="meta-tag">矿业</span><span class="meta-tag">合规</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">领益智造标的推荐</div>
+          <div class="project-tag tag-buyer">买方服务</div>
+        </div>
+        <div class="project-detail">
+          为消费电子龙头推荐太阳翼、德融科技等标的。
+          <div class="project-meta"><span class="meta-tag">消费电子</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggleYear(this)">
+      <div class="year-badge">2025</div>
+      <div class="year-line"></div>
+      <div class="year-toggle">▼</div>
+    </div>
+    <div class="year-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">国城矿业重大资产重组1期</div>
+          <div class="project-tag tag-closed">已交割</div>
+        </div>
+        <div class="project-detail">
+          31.68亿元现金收购国城实业60%股权。2025年12月完成交割。
+          <div class="project-meta"><span class="meta-tag">重大资产重组</span><span class="meta-tag">矿业</span><span class="meta-tag">31.68亿</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">久久精工项目</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          精密制造领域并购机会挖掘。
+          <div class="project-meta"><span class="meta-tag">精密制造</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">凌鼎智能 - AGV设备</div>
+          <div class="project-tag tag-seller">卖方服务</div>
+        </div>
+        <div class="project-detail">
+          智能物流AGV设备公司并购标的推荐。
+          <div class="project-meta"><span class="meta-tag">智能制造</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">麦克传感项目</div>
+          <div class="project-tag tag-buyer">标的筛选</div>
+        </div>
+        <div class="project-detail">
+          传感器行业标的深度研究。
+          <div class="project-meta"><span class="meta-tag">传感器</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">KOC标的分析与推荐</div>
+          <div class="project-tag tag-buyer">研究推荐</div>
+        </div>
+        <div class="project-detail">
+          行业研究与标的筛选推荐。
+          <div class="project-meta"><span class="meta-tag">行业研究</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">AI服务器ODM厂商研究</div>
+          <div class="project-tag tag-buyer">行业研究</div>
+        </div>
+        <div class="project-detail">
+          AI算力产业链深度研究。
+          <div class="project-meta"><span class="meta-tag">AI服务器</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggleYear(this)">
+      <div class="year-badge">2024</div>
+      <div class="year-line"></div>
+      <div class="year-toggle">▼</div>
+    </div>
+    <div class="year-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">保安医疗材料项目</div>
+          <div class="project-tag tag-seller">卖方顾问</div>
+        </div>
+        <div class="project-detail">
+          医疗耗材大单品公司出售顾问。完成公司介绍报告、财务报表分析、税务研究、交易方案设计。
+          <div class="project-meta"><span class="meta-tag">医疗耗材</span><span class="meta-tag">交易方案</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">桂发祥项目</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          老字号食品企业并购。对接保密协议流程、财务顾问协议。
+          <div class="project-meta"><span class="meta-tag">食品行业</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">康达检测项目</div>
+          <div class="project-tag tag-seller">卖方服务</div>
+        </div>
+        <div class="project-detail">
+          检测行业公司推介。行业研究、买方匹配。
+          <div class="project-meta"><span class="meta-tag">检测行业</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">叶之梦项目</div>
+          <div class="project-tag tag-seller">卖方顾问</div>
+        </div>
+        <div class="project-detail">
+          医疗器械公司出售。从破产信息搜集到保密协议签署全流程。
+          <div class="project-meta"><span class="meta-tag">医疗器械</span><span class="meta-tag">破产重组</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">中际联合项目</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          高空作业设备龙头并购。对接意大利卖方。
+          <div class="project-meta"><span class="meta-tag">跨境并购</span><span class="meta-tag">意大利</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggleYear(this)">
+      <div class="year-badge">2023</div>
+      <div class="year-line"></div>
+      <div class="year-toggle">▼</div>
+    </div>
+    <div class="year-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">兴汉网际出售给大豪科技</div>
+          <div class="project-tag tag-closed">已交割</div>
+        </div>
+        <div class="project-detail">
+          兴汉网际出售给大豪科技（603025），完成资产交割。协助卖方完成退出。
+          <div class="project-meta"><span class="meta-tag">网络安全</span><span class="meta-tag">产业并购</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">柬埔寨/尼加拉瓜金矿项目</div>
+          <div class="project-tag tag-buyer">估值建模</div>
+        </div>
+        <div class="project-detail">
+          海外金矿收购。估值模型搭建、敏感性分析。
+          <div class="project-meta"><span class="meta-tag">矿业估值</span><span class="meta-tag">跨境</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">聚益科海外项目</div>
+          <div class="project-tag tag-both">撮合交易</div>
+        </div>
+        <div class="project-detail">
+          跨境并购立项与推进。
+          <div class="project-meta"><span class="meta-tag">跨境并购</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">科麦食品 x 莲花健康</div>
+          <div class="project-tag tag-buyer">买方顾问</div>
+        </div>
+        <div class="project-detail">
+          食品行业并购。为科麦寻找合适买方。
+          <div class="project-meta"><span class="meta-tag">食品行业</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">年昌项目</div>
+          <div class="project-tag tag-advisory">财务顾问</div>
+        </div>
+        <div class="project-detail">
+          签订框架协议与财务顾问协议。
+          <div class="project-meta"><span class="meta-tag">框架协议</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">硅棒项目</div>
+          <div class="project-tag tag-buyer">财务分析</div>
+        </div>
+        <div class="project-detail">
+          新能源材料行业并购。市值变化统计。
+          <div class="project-meta"><span class="meta-tag">新能源</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">Bantig项目（跨境合作）</div>
+          <div class="project-tag tag-both">合作方案</div>
+        </div>
+        <div class="project-detail">
+          与国外合作方联合推进。设计分成方案。
+          <div class="project-meta"><span class="meta-tag">跨境合作</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggleYear(this)">
+      <div class="year-badge">2022</div>
+      <div class="year-line"></div>
+      <div class="year-toggle">▼</div>
+    </div>
+    <div class="year-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">太原矿业项目（天首）</div>
+          <div class="project-tag tag-sell">重大资产出售</div>
+        </div>
+        <div class="project-detail">
+          重大资产出售项目。矿业并购全流程参与。驻场尽调、抽凭、函证、访谈、并购报告撰写。
+          <div class="project-meta"><span class="meta-tag">矿业</span><span class="meta-tag">尽调驻场</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">稳健医疗收购平安医械</div>
+          <div class="project-tag tag-seller">卖方财务顾问</div>
+        </div>
+        <div class="project-detail">
+          7.52亿元控股收购湖南平安医械68.7%股权。PE约11.7倍。
+          <div class="project-meta"><span class="meta-tag">医疗器械</span><span class="meta-tag">7.52亿</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">收购美尔雅控制权</div>
+          <div class="project-tag tag-closed">已交割</div>
+        </div>
+        <div class="project-detail">
+          协助买方完成美尔雅（600107）控制权收购全流程。
+          <div class="project-meta"><span class="meta-tag">控制权收购</span><span class="meta-tag">A股</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">美尔雅持续督导</div>
+          <div class="project-tag tag-advisory">持续督导</div>
+        </div>
+        <div class="project-detail">
+          新三板公司持续督导。底稿整理、季报审核。
+          <div class="project-meta"><span class="meta-tag">新三板</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">医疗器械标的系统性搜寻</div>
+          <div class="project-tag tag-buyer">Deal Sourcing</div>
+        </div>
+        <div class="project-detail">
+          系统性cold call/cold email建联。覆盖7大细分领域。
+          <div class="project-meta"><span class="meta-tag">Deal Sourcing</span><span class="meta-tag">医疗</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">倍肯借壳方案</div>
+          <div class="project-tag tag-seller">交易方案</div>
+        </div>
+        <div class="project-detail">
+          为倍肯老板设计借壳上市方案。
+          <div class="project-meta"><span class="meta-tag">借壳上市</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">莲花健康交易方案</div>
+          <div class="project-tag tag-buyer">交易方案</div>
+        </div>
+        <div class="project-detail">
+          对照兴汉方案撰写。学习重大与非重大交易的方案差异。
+          <div class="project-meta"><span class="meta-tag">交易方案</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">海尔医疗板块合作</div>
+          <div class="project-tag tag-buyer">买方服务</div>
+        </div>
+        <div class="project-detail">
+          为海尔医疗板块推荐标的。
+          <div class="project-meta"><span class="meta-tag">产业并购</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-header" onclick="toggleYear(this)">
+      <div class="year-badge">2021</div>
+      <div class="year-line"></div>
+      <div class="year-toggle">▼</div>
+    </div>
+    <div class="year-content">
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">忠旺集团项目</div>
+          <div class="project-tag tag-advisory">尽职调查</div>
+        </div>
+        <div class="project-detail">
+          大型铝业集团并购项目。底稿搜集、上传，新人培训后首个参与项目。
+          <div class="project-meta"><span class="meta-tag">铝业</span><span class="meta-tag">底稿管理</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">棒杰项目（A吃A）</div>
+          <div class="project-tag tag-advisory">并购重组</div>
+        </div>
+        <div class="project-detail">
+          A股上市公司收购A股上市公司。首次接触A吃A交易结构。
+          <div class="project-meta"><span class="meta-tag">A吃A</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">鸭鸭羽绒服项目</div>
+          <div class="project-tag tag-seller">卖方服务</div>
+        </div>
+        <div class="project-detail">
+          知名品牌并购项目。旁听会议、撰写会议纪要、海外可比交易研究。
+          <div class="project-meta"><span class="meta-tag">消费品</span><span class="meta-tag">品牌并购</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">Giuliano海外标的（意大利）</div>
+          <div class="project-tag tag-both">跨境并购</div>
+        </div>
+        <div class="project-detail">
+          与意大利卖方顾问对接。首次深度参与跨境并购全流程。
+          <div class="project-meta"><span class="meta-tag">跨境并购</span><span class="meta-tag">意大利</span></div>
+        </div>
+      </div>
+      <div class="project-card" onclick="toggleProject(this)">
+        <div class="project-header">
+          <div class="project-name">三星麦迪逊（韩国标的）</div>
+          <div class="project-tag tag-buyer">估值研究</div>
+        </div>
+        <div class="project-detail">
+          韩国医疗公司估值研究。财报翻译、EBITDA研究。
+          <div class="project-meta"><span class="meta-tag">韩国</span><span class="meta-tag">估值</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== 核心技能 ==================== -->
+<section id="skills">
+  <div class="section-title">核心技能图谱</div>
+  <div class="section-sub">每项技能均有真实案例支撑 · 点击展开查看</div>
+
+  <div class="skills-grid">
+    <div class="skill-card" onclick="toggleSkill(this)">
+      <div class="skill-title">交易方案设计 <span class="arrow">▶</span></div>
+      <div class="skill-summary">借壳、收购、参股等多种交易结构设计</div>
+      <div class="skill-detail">
+        <div class="case-item">
+          <div class="case-label">案例支撑</div>
+          为倍肯设计借壳方案，莲花健康收购方案，保安医疗出售方案，国城矿业重大资产重组。理解重大与非重大交易的方案差异，掌握对赌补偿、分期支付、老股转让+增资等灵活安排。
+        </div>
+        <div class="future-note">
+          <div class="future-label">A股并购价值</div>
+          当前A股并购重组政策趋暖，能够快速设计合规且有吸引力的交易方案，是打动上市公司实控人的核心能力。
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-card" onclick="toggleSkill(this)">
+      <div class="skill-title">估值建模与财务分析 <span class="arrow">▶</span></div>
+      <div class="skill-summary">矿业估值、EBITDA分析、敏感性分析、市值研究</div>
+      <div class="skill-detail">
+        <div class="case-item">
+          <div class="case-label">案例支撑</div>
+          柬埔寨/尼加拉瓜金矿估值模型搭建与敏感性分析；三星麦迪逊EBITDA研究；硅棒收购前后市值变化统计；国城实业估值60亿增值率207%。
+        </div>
+        <div class="future-note">
+          <div class="future-label">A股并购价值</div>
+          估值是并购交易的核心博弈点。掌握多种估值方法并能快速建模，能够在谈判中为买方争取合理价格。
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-card" onclick="toggleSkill(this)">
+      <div class="skill-title">标的搜寻与筛选 <span class="arrow">▶</span></div>
+      <div class="skill-summary">Deal Sourcing全流程：筛选→建联→转化</div>
+      <div class="skill-detail">
+        <div class="case-item">
+          <div class="case-label">案例支撑</div>
+          系统性搜寻医疗标的7大细分领域，筛选50+企业，联系40+，加微信10+。为和利时搜寻仪器仪表标的，为领益智造推荐太阳翼标的。
+        </div>
+        <div class="future-note">
+          <div class="future-label">A股并购价值</div>
+          优质标的是稀缺资源。拥有系统性搜寻能力和行业人脉网络，是FA的核心竞争壁垒。
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-card" onclick="toggleSkill(this)">
+      <div class="skill-title">尽职调查 <span class="arrow">▶</span></div>
+      <div class="skill-summary">财务/法律/业务尽调，底稿管理，访谈，函证</div>
+      <div class="skill-detail">
+        <div class="case-item">
+          <div class="case-label">案例支撑</div>
+          太原矿业项目驻场尽调：抽凭、函证、访谈、底稿搜集全流程。美尔雅底稿核对归档。国城项目现场工作与反馈回复。
+        </div>
+        <div class="future-note">
+          <div class="future-label">A股并购价值</div>
+          尽调质量直接决定交易成败。有完整驻场尽调经验，能够识别标的风险点。
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-card" onclick="toggleSkill(this)">
+      <div class="skill-title">推介材料制作 <span class="arrow">▶</span></div>
+      <div class="skill-summary">Teaser、公司介绍PPT、合作方案、竞标PPT</div>
+      <div class="skill-detail">
+        <div class="case-item">
+          <div class="case-label">案例支撑</div>
+          制作/精修数十份推介材料：灯饰公司PPT、永和PPT、保安医疗报告、长康竞标PPT、Bantig英文teaser。
+        </div>
+        <div class="future-note">
+          <div class="future-label">A股并购价值</div>
+          材料是敲门砖。能在短时间内制作出专业、精准、有吸引力的推介材料。
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-card" onclick="toggleSkill(this)">
+      <div class="skill-title">多方协调与项目管理 <span class="arrow">▶</span></div>
+      <div class="skill-summary">买卖方、律师、审计师、合作方多方协调</div>
+      <div class="skill-detail">
+        <div class="case-item">
+          <div class="case-label">案例支撑</div>
+          中际联合项目：协调意大利卖方、国内买方、翻译团队。Bantig项目：与国外合作方设计分成方案。科麦x莲花：同时维护买卖方关系。
+        </div>
+        <div class="future-note">
+          <div class="future-label">A股并购价值</div>
+          并购交易涉及多方利益博弈。能够协调多方角色，推动交易进展。
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-card" onclick="toggleSkill(this)">
+      <div class="skill-title">跨境交易能力 <span class="arrow">▶</span></div>
+      <div class="skill-summary">中欧、中韩、东南亚跨境并购实操</div>
+      <div class="skill-detail">
+        <div class="case-item">
+          <div class="case-label">案例支撑</div>
+          意大利Giuliano项目；韩国三星麦迪逊；柬埔寨/尼加拉瓜金矿；与法国投行CANOVIA BANQUE电话会议。韩语搜索能力。
+        </div>
+        <div class="future-note">
+          <div class="future-label">A股并购价值</div>
+          A股跨境并购需求增长，能实操的人才稀缺。这是差异化竞争力。
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-card" onclick="toggleSkill(this)">
+      <div class="skill-title">客户关系与情商管理 <span class="arrow">▶</span></div>
+      <div class="skill-summary">从失败中学习的沟通艺术与关系维护</div>
+      <div class="skill-detail">
+        <div class="case-item">
+          <div class="case-label">案例支撑</div>
+          叶之梦项目被卖方批评后深刻反思——学会站在卖方角度沟通。"七分关系说五分话"的情商原则。
+        </div>
+        <div class="future-note">
+          <div class="future-label">A股并购价值</div>
+          并购是人的生意。有从失败中快速学习的能力，能够建立长期客户信任。
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-card" onclick="toggleSkill(this)">
+      <div class="skill-title">行业研究与分析 <span class="arrow">▶</span></div>
+      <div class="skill-summary">深入行业理解：商业模式、竞争格局、发展趋势</div>
+      <div class="skill-detail">
+        <div class="case-item">
+          <div class="case-label">案例支撑</div>
+          医疗器械、调味品行业可比交易研究、矿业行业标准更新、AI服务器ODM产业链研究。建立行业数据库。
+        </div>
+        <div class="future-note">
+          <div class="future-label">A股并购价值</div>
+          深度行业认知是发现价值的基础。能够快速理解行业商业逻辑，判断标的优劣。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== 经验反思 ==================== -->
+<section id="experience">
+  <div class="section-title">经验总结与反思</div>
+  <div class="section-sub">来自真实项目中的深刻教训</div>
+
+  <div class="experience-list">
+    <div class="exp-card">
+      <div class="exp-type exp-reflection">反思</div>
+      <div class="exp-content">
+        <strong>关系先于交易</strong> — 叶之梦项目被卖方批评"咄咄逼人，没有站在他们角度"。教训：先做铺垫介绍团队和案例赢得信任，搞关系是第一位的，关系到位了后续一切都好说。
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-type exp-improve">提升</div>
+      <div class="exp-content">
+        <strong>深度思考 > 快速执行</strong> — "不要急着做完工作然后不断找我要活。质量不高其他人不太愿意再给你新工作。"学会先品味透彻再动手，每句话字斟句酌。
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-type exp-eq">情商修炼</div>
+      <div class="exp-content">
+        <strong>七分关系说五分话</strong> — 当你和对方有七分关系时，用五分的关系说话，就是高情商。反之如果有七分关系却说了十分关系的话，就是低情商。
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-type exp-reflection">反思</div>
+      <div class="exp-content">
+        <strong>做事要思考Why</strong> — 想这事领导为啥要干；想这事领导的期待；想你怎么做最好；想你的产出是否有漏洞。越多的思考都不嫌多。
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-type exp-improve">提升</div>
+      <div class="exp-content">
+        <strong>项目推进能力</strong> — "项目没有动静是你需要考虑如何推进的，不要光催光等。能不能做项目经理，就看有没有推进项目的能力。"我做的事最后都是我的名片。
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-type exp-reflection">反思</div>
+      <div class="exp-content">
+        <strong>准备决定成败</strong> — 联系标的前一定要把对方运营模式、合作价值摸透，至少写出一个teaser来才好推进。打电话注意自信，慢一点，不要抢话。
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-type exp-eq">情商修炼</div>
+      <div class="exp-content">
+        <strong>倾听与理解</strong> — 和你想法不一样的人，先倾听理解他们怎么想的，不要先入为主觉得自己才是对的。先答应，求同后再说其它想法。
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-type exp-improve">提升</div>
+      <div class="exp-content">
+        <strong>汇报的四个标准</strong> — 有效率、有质量、有形象、有态度。先说结论，再说理由，再重复你想请示的东西。
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-type exp-reflection">反思</div>
+      <div class="exp-content">
+        <strong>承揽思路</strong> — 1. 靠别人：维护老客户成本低，利用专业与靠谱让他们认可甚至推荐。2. 靠自己：技术和人品。推不靠谱的项目会消耗关系。
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== 买卖方汇总 ==================== -->
+<section id="deals">
+  <div class="section-title">买方与卖方项目汇总</div>
+  <div class="section-sub">按角色分类 · 后续可持续丰富</div>
+
+  <div class="deal-section">
+    <div>
+      <div class="deal-col-title buyer-title">买方服务项目</div>
+      <div class="deal-item"><div class="deal-name">国城矿业（重大资产重组）</div><div class="deal-desc">收购国城实业100%股权，累计斥资55亿</div></div>
+      <div class="deal-item"><div class="deal-name">美尔雅（600107）</div><div class="deal-desc">控制权收购全流程</div></div>
+      <div class="deal-item"><div class="deal-name">和利时（工业自动化）</div><div class="deal-desc">仪器仪表、工业软件标的搜寻</div></div>
+      <div class="deal-item"><div class="deal-name">奕帆传动 x 和利时电机</div><div class="deal-desc">收购87.07%股权，重大资产重组</div></div>
+      <div class="deal-item"><div class="deal-name">领益智造（消费电子）</div><div class="deal-desc">太阳翼、德融科技等标的推荐</div></div>
+      <div class="deal-item"><div class="deal-name">海尔医疗板块</div><div class="deal-desc">医疗板块并购顾问</div></div>
+      <div class="deal-item"><div class="deal-name">中际联合（高空作业设备）</div><div class="deal-desc">意大利卖方对接、跨境并购</div></div>
+      <div class="deal-item"><div class="deal-name">桂发祥（老字号食品）</div><div class="deal-desc">保密协议、财务顾问协议、标的推荐</div></div>
+      <div class="deal-item"><div class="deal-name">张恒春（中药老字号）</div><div class="deal-desc">内核会、流程推进、材料准备</div></div>
+      <div class="deal-item"><div class="deal-name">密思特 x 国际精密</div><div class="deal-desc">精密制造并购撮合、财顾协议</div></div>
+      <div class="deal-item"><div class="deal-name">久久精工</div><div class="deal-desc">精密制造领域并购机会挖掘</div></div>
+      <div class="deal-item"><div class="deal-name">科麦食品 x 莲花健康</div><div class="deal-desc">食品行业并购买方匹配</div></div>
+      <div class="deal-item"><div class="deal-name">柬埔寨/尼加拉瓜金矿</div><div class="deal-desc">海外金矿估值建模</div></div>
+    </div>
+
+    <div>
+      <div class="deal-col-title seller-title">卖方服务项目</div>
+      <div class="deal-item"><div class="deal-name">兴汉网际 → 大豪科技（603025）</div><div class="deal-desc">2023年出售完成，协助卖方退出</div></div>
+      <div class="deal-item"><div class="deal-name">稳健医疗（300888）</div><div class="deal-desc">卖方财务顾问：7.52亿控股收购平安医械</div></div>
+      <div class="deal-item"><div class="deal-name">太原矿业项目（天首）</div><div class="deal-desc">重大资产出售，驻场尽调</div></div>
+      <div class="deal-item"><div class="deal-name">保安医疗（医疗耗材）</div><div class="deal-desc">出售顾问：报告、税务研究、交易方案、买方对接</div></div>
+      <div class="deal-item"><div class="deal-name">叶之梦（医疗器械）</div><div class="deal-desc">出售全流程：破产信息→保密协议→买方推荐</div></div>
+      <div class="deal-item"><div class="deal-name">永和（消费品）</div><div class="deal-desc">公司介绍PPT多轮打磨精修</div></div>
+      <div class="deal-item"><div class="deal-name">康达检测</div><div class="deal-desc">行业研究、买方匹配、公司介绍材料</div></div>
+      <div class="deal-item"><div class="deal-name">凌鼎智能（AGV设备）</div><div class="deal-desc">卖方服务，标的推荐</div></div>
+      <div class="deal-item"><div class="deal-name">倍肯（借壳方案）</div><div class="deal-desc">借壳上市方案设计</div></div>
+      <div class="deal-item"><div class="deal-name">鸭鸭羽绒服</div><div class="deal-desc">品牌并购、海外可比交易研究</div></div>
+      <div class="deal-item"><div class="deal-name">灯饰公司</div><div class="deal-desc">推介PPT制作，品牌与渠道价值挖掘</div></div>
+      <div class="deal-item"><div class="deal-name">长康（调味品）</div><div class="deal-desc">公司介绍PPT、竞标PPT</div></div>
+      <div class="deal-item"><div class="deal-name">悦心健康</div><div class="deal-desc">推荐材料撰写</div></div>
+      <div class="deal-item"><div class="deal-name">逸仙堂</div><div class="deal-desc">合作方案初稿</div></div>
+      <div class="deal-item"><div class="deal-name">开诚环保</div><div class="deal-desc">推荐给潜在买方</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== 跳槽陈述 ==================== -->
+<section id="pitch">
+  <div class="section-title">跳槽能力陈述</div>
+  <div class="section-sub">能力 · 资源 · 未来潜力</div>
+
+  <div class="pitch-section">
+    <div class="pitch-title">我能为贵司带来什么</div>
+
+    <div class="pitch-grid">
+      <div class="pitch-card">
+        <div class="pitch-icon">🎯</div>
+        <div class="pitch-label">即战力：全链条实操经验</div>
+        <div class="pitch-text">
+          5年并购从业，40+项目经验，6个已交割项目。从deal sourcing到尽调到交易方案到close全流程参与。不需要培训即可上手A股并购业务。
+        </div>
+      </div>
+
+      <div class="pitch-card">
+        <div class="pitch-icon">🌐</div>
+        <div class="pitch-label">跨境能力：稀缺资源</div>
+        <div class="pitch-text">
+          有中国与欧洲、韩国、东南亚的实操并购经验。能够处理多语言沟通、跨文化商务谈判。当前A股跨境并购需求增长，这是差异化竞争壁垒。
+        </div>
+      </div>
+
+      <div class="pitch-card">
+        <div class="pitch-icon">🏥</div>
+        <div class="pitch-label">医疗行业深度积累</div>
+        <div class="pitch-text">
+          系统性搜寻过7大医疗细分领域，联系过50+医疗企业。医疗是A股并购最活跃的赛道之一，行业know-how直接转化为交易机会。
+        </div>
+      </div>
+
+      <div class="pitch-card">
+        <div class="pitch-icon">🤝</div>
+        <div class="pitch-label">产业方资源网络</div>
+        <div class="pitch-text">
+          与海尔、领益智造、和利时、桂发祥等多家上市公司建立合作关系。这些人脉网络能够持续输出交易机会。
+        </div>
+      </div>
+
+      <div class="pitch-card">
+        <div class="pitch-icon">📐</div>
+        <div class="pitch-label">从失败中快速学习</div>
+        <div class="pitch-text">
+          叶之梦项目被批评后快速调整沟通策略。能够从每次失败中提炼方法论并应用到后续项目。
+        </div>
+      </div>
+
+      <div class="pitch-card">
+        <div class="pitch-icon">📈</div>
+        <div class="pitch-label">未来潜力：独立承揽能力</div>
+        <div class="pitch-text">
+          已建立从标的搜寻→客户开发→交易撮合的完整方法论。未来可独立承揽项目，为团队带来更多交易机会和收入。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;">
+    <div class="section-title" style="font-size:1.2rem;">核心竞争优势总结</div>
+    <div class="tag-cloud" style="margin-top:24px;">
+      <span class="tag-pill">6个已交割项目</span>
+      <span class="tag-pill">74家买方需求库</span>
+      <span class="tag-pill">全链条实操</span>
+      <span class="tag-pill">买方+卖方双视角</span>
+      <span class="tag-pill">跨境并购经验</span>
+      <span class="tag-pill">医疗行业深耕</span>
+      <span class="tag-pill">多行业覆盖</span>
+      <span class="tag-pill">产业方资源</span>
+      <span class="tag-pill">Deal Sourcing体系化</span>
+      <span class="tag-pill">估值建模能力</span>
+      <span class="tag-pill">重大资产重组经验</span>
+      <span class="tag-pill">控制权收购经验</span>
+      <span class="tag-pill">项目推进力</span>
+    </div>
+  </div>
+</section>
+
+<div class="contact-bar">
+  <div class="name">冯木楠 · 并购专家</div>
+  <div>5年并购实操经验 · 40+项目 · 6个已交割 · 74家买方需求 · 持续成长中</div>
+</div>
+
+<script>
+function toggleYear(el) {
+  var content = el.nextElementSibling;
+  var arrow = el.querySelector('.year-toggle');
+  content.classList.toggle('show');
+  arrow.classList.toggle('open');
+}
+function toggleCat(el) {
+  var content = el.nextElementSibling;
+  var arrow = el.querySelector('.cat-toggle');
+  content.classList.toggle('show');
+  arrow.classList.toggle('open');
+}
+function toggleProject(el) {
+  el.classList.toggle('expanded');
+}
+function toggleSkill(el) {
+  el.classList.toggle('expanded');
+}
+
+var buyerNamesHidden = false;
+document.getElementById('nameToggleBtn').addEventListener('click', function() {
+  buyerNamesHidden = !buyerNamesHidden;
+  document.querySelectorAll('.buyer-row-name').forEach(function(n) {
+    n.classList.toggle('hidden-name', buyerNamesHidden);
+  });
+  this.textContent = buyerNamesHidden ? '\u{1F441} 显示买方名称' : '\u{1F441} 隐藏买方名称';
+  this.classList.toggle('active', buyerNamesHidden);
+});
+
+function searchBuyer(val) {
+  var rows = document.querySelectorAll('#buyerList .buyer-row');
+  var count = 0;
+  rows.forEach(function(row) {
+    var searchText = (row.getAttribute('data-search') || '').toLowerCase() + ' ' + (row.textContent || '').toLowerCase();
+    var keyword = val.toLowerCase().trim();
+    if (!keyword || searchText.indexOf(keyword) !== -1) {
+      row.classList.remove('hidden-row');
+      count++;
+    } else {
+      row.classList.add('hidden-row');
+    }
+  });
+  document.getElementById('buyerCountNum').textContent = count;
+}
+
+document.getElementById('buyerSearch').addEventListener('input', function() {
+  searchBuyer(this.value);
+});
+
+function filterBuyer(industry, btn) {
+  document.querySelectorAll('.buyer-filter').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  var rows = document.querySelectorAll('#buyerList .buyer-row');
+  var count = 0;
+  rows.forEach(function(row) {
+    if (industry === 'all' || row.getAttribute('data-industry') === industry) {
+      row.classList.remove('hidden-row');
+      count++;
+    } else {
+      row.classList.add('hidden-row');
+    }
+  });
+  document.getElementById('buyerCountNum').textContent = count;
+  document.getElementById('buyerSearch').value = '';
+}
+
+document.querySelectorAll('.buyer-filter').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    filterBuyer(this.getAttribute('data-filter'), this);
+  });
+});
+
+document.querySelectorAll('.nav a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+var sections = document.querySelectorAll('section');
+var navLinks = document.querySelectorAll('.nav a');
+window.addEventListener('scroll', function() {
+  var current = '';
+  sections.forEach(function(s) {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navLinks.forEach(function(l) {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+</body>
+</html>
