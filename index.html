@@ -147,7 +147,7 @@ section{max-width:1200px;margin:0 auto;padding:100px 24px}
   <div class="pw-error" id="pwError"></div>
 </div>
 <script>
-const CORRECT_PASSWORD='202608';
+const CORRECT_PASSWORD='202607';
 function checkPassword(){const i=document.getElementById('pwInput').value;const e=document.getElementById('pwError');if(i===CORRECT_PASSWORD){document.getElementById('password-overlay').classList.add('hidden');document.body.style.overflow='auto'}else{e.textContent='密码错误，请重试';document.getElementById('pwInput').value='';document.getElementById('pwInput').focus()}}
 document.body.style.overflow='hidden';
 </script>
@@ -399,7 +399,7 @@ document.body.style.overflow='hidden';
 
 <section id="buyer-needs">
   <div class="section-title">买方需求库</div>
-  <div class="section-sub">76家上市公司/机构并购需求 · 买方可一键隐藏</div>
+  <div class="section-sub">80家上市公司/机构并购需求 · 买方可一键隐藏</div>
   <div class="buyer-toolbar">
     <div class="buyer-toolbar-left">
       <div class="buyer-search">
@@ -408,57 +408,226 @@ document.body.style.overflow='hidden';
       <button class="buyer-toggle-btn" onclick="toggleAllBuyerNames()" id="nameToggleBtn">👁 隐藏买方名称</button>
     </div>
     <div class="buyer-filters">
-      <button class="buyer-filter active" data-filter="all">全部 76</button>
-      <button class="buyer-filter" data-filter="医疗">医疗 16</button>
-      <button class="buyer-filter" data-filter="制造">制造 38</button>
-      <button class="buyer-filter" data-filter="消费">消费 11</button>
+      <button class="buyer-filter active" data-filter="all">全部 79</button>
+      <button class="buyer-filter" data-filter="制造">制造 45</button>
+      <button class="buyer-filter" data-filter="医疗">医疗 15</button>
+      <button class="buyer-filter" data-filter="消费">消费 10</button>
+      <button class="buyer-filter" data-filter="环保">环保 3</button>
       <button class="buyer-filter" data-filter="化工">化工 3</button>
       <button class="buyer-filter" data-filter="TMT">TMT 2</button>
-      <button class="buyer-filter" data-filter="环保">环保 2</button>
       <button class="buyer-filter" data-filter="其他">其他 1</button>
     </div>
   </div>
-  <div class="buyer-count-bar" id="buyerCountBar">显示 <span id="buyerCountNum">76</span> 条需求</div>
+  <div class="buyer-count-bar" id="buyerCountBar">显示 <span id="buyerCountNum">79</span> 条需求</div>
   <div class="buyer-list-header"><div>行业</div><div>买方</div><div>需求内容</div></div>
   <div id="buyerList">
-    <div class="buyer-row" data-industry="医疗" data-search="稳健医疗 低值耗材 海外品牌 手术包 生命科学 干细胞 介入器械"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="稳健医疗">稳健医疗</div><div class="buyer-row-need">1、国内低值耗材公司；2、海外低值耗材品牌与有关渠道；3、可集成进入手术包类产品；4、生命科学和生物材料（干细胞、脱细胞等）。更新：今年主要看海外渠道和品牌的公司，国内看高值介入器械及耗材</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="英洛华 轮椅 电机"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="英洛华">英洛华</div><div class="buyer-row-need">轮椅、电机等项目收购</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="中红医疗 低值耗材 高值耗材 骨科 血管介入 口腔 血液净化 康复设备 体外诊断 IVD POCT"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="中红医疗">中红医疗</div><div class="buyer-row-need">1、有技术含量且属细分领域头部的低值耗材，优先出口渠道；2、高值耗材（骨科植入、血管介入、口腔医用耗材、血液净化类）；3、医用医疗设备（康复设备、病房护理设备、诊断设备等）；4、体外诊断（免疫诊断、分子诊断和POCT）</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="同仁堂 中药饮片 净利润率 院内销售 国资 集采"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="同仁堂">同仁堂</div><div class="buyer-row-need">并购中药饮片：收入3亿以上，净利润率10%以上；销售渠道相对分散，以院内销售为主；有较强销售团队。并购后有国资身份集采更有竞争力，可更名为北京同仁堂某某饮片公司。避开亳州和安国的企业</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="华润三九 骨科 呼吸 肠胃 妇科 儿科 独家品种 卫生护理"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="华润三九">华润三九</div><div class="buyer-row-need">骨科、呼吸、肠胃、妇科、儿科大品种（市场前三）、有市场知名度的独家品种；妇科相关的卫生护理用品，需要品牌比较有知名度</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="明德生物 IVD 凝血 免疫 分子 仪器 试剂"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="明德生物">明德生物</div><div class="buyer-row-need">优先考虑IVD方向，凝血免疫分子等，尤其偏好仪器类标的（明德试剂较强）。营收1亿以上，有利润</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="威高 口腔 正畸 种植 修复 洁利康 偏后期"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="威高">威高</div><div class="buyer-row-need">口腔医疗都在看：正畸、种植、修复，上下游。体量偏大，偏后期有收入最好有利润。自己有洁利康，从产业链上下游或不同产业方向横向都先看看</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="康基医疗 微创外科 手术耗材 妇科 泌尿 普外 胸外科 呼吸 消化 镜子 创新器械 术中影像"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="康基医疗（港股）">康基医疗（港股）</div><div class="buyer-row-need">聚焦微创外科，提供手术耗材、设备等解决方案。科室覆盖妇科、泌尿、普外、胸外科，覆盖3500+家医院（1000+家三甲）。偏好：呼吸、消化镜子、外科创新器械、术中影像设备</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="新里程集团 医药 医疗器械 控股权 中成药 独家品种 医疗服务 三级医院 具身智能 康复 养老 机器人"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="新里程集团">新里程集团</div><div class="buyer-row-need">1、医药/医疗器械上市公司控股权并购，市值50亿以下；2、医疗器械：诊断/治疗/康复设备，利润2000万+；3、中成药企业，最好有独家品种；4、省会三级以上营利性医疗机构，收入2亿+，盈利；5、康复/养老场景的具身智能机器人本体</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="广州数科 数字安全 医疗 器械 信息化 服务 利润"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="广州数科">广州数科</div><div class="buyer-row-need">今年重点是医疗板块，除了药不看，器械、信息化和服务方向的都可以，要有两三千万利润的。全国都可以，广东优先</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="珍视明 滴眼液 眼科 五官科 皮肤科 OTC 产品型"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="珍视明">珍视明</div><div class="buyer-row-need">并购估值1亿以上，上不封顶，超过10亿需换股。1、滴眼液标的，偏好OTC；2、泛眼科标的，有利润，产品型，10-15x PE；3、五官科及皮肤科，有利润，产品型</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="祥生医疗 超声 影像设备"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="祥生医疗">祥生医疗</div><div class="buyer-row-need">超声影像设备</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="德福资本 医疗 营养品 保健品 控股权 出海"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="德福资本">德福资本</div><div class="buyer-row-need">医疗、营养品、保健品，控股权收购为主，喜欢大标的，可帮忙出海</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="中国通用技术 央企 机床刀具 医用材料 IPO"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="中国通用技术">中国通用技术</div><div class="buyer-row-need">央企，在找机床刀具类或者医用材料类的机会，上市非上市都行，核心看标的质地，符合IPO条件的最好</div></div>
-    <div class="buyer-row" data-industry="医疗" data-search="顺丰 物流 合同物流 冷链 国际跨境物流"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="顺丰">顺丰</div><div class="buyer-row-need">狭义物流领域，跟集团主业高度相关，主要包括合同物流、冷链、国际跨境物流等赛道</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="汇洲智能 机床 机器人 海外 上下游"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="汇洲智能">汇洲智能</div><div class="buyer-row-need">国内不看，海外机床和机器人上下游相关</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="澳柯玛 制冷 冷库 小家电 机器人 家用 服务"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="澳柯玛">澳柯玛</div><div class="buyer-row-need">制冷类要求大型冷库以及与制冷技术有关的标的；小家电要求有前景比如家用机器人、服务机器人；医疗类包括器械和耗材</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="天合光能 储能 逆变器 PCS 碳化硅 氮化镓 ITO靶材 锂电池 光伏 10亿 投资"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="天合光能">天合光能</div><div class="buyer-row-need">自身上下游，优先PCS储能逆变器标的，碳化硅氮化镓，ITO靶材。锂电池及光伏产业链上成熟产品，技术路线清晰。10亿估值以内，可以亏损。也可以投资，10%+股份及一个董事会席位</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="中际联合 新能源 风力 储能 氢能 电网 配网 净利润 毛利率"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="中际联合">中际联合</div><div class="buyer-row-need">新能源产业链发电侧（风力、储能、氢能）、电网侧（配网、电网相关）的相关机会，有净利润且最好毛利净利率高一些</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="厦门建发 资源 农产品 矿产 纸浆 木材 橡胶 加工 仓储 物流 新能源 电池 硅料 光伏"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="厦门建发">厦门建发</div><div class="buyer-row-need">海外看资源类：农产品、矿产、纸浆、木材、橡胶等及配套加工、物流仓储。国内看加工资源、仓储物流；新能源类：电池厂、硅料厂、光伏厂等</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="斯迪克 光学显示 新能源电池 2-5亿 不发股"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="斯迪克">斯迪克</div><div class="buyer-row-need">光学显示、新能源电池核心部件。规模2-5亿元，小一些，不考虑发股</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="京城控股 机器人 AGV AMR 机床 卧加 直驱 航空航天 机器视觉 焊接 谐波减速器 精密丝杠 电传动 国企"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="京城控股">京城控股</div><div class="buyer-row-need">北京市国企，旗下有A+H上市公司京城股份。主要投资方向：机器人（伺服、控制、减速器等核心软硬件）、AGV、AMR、机床（卧加、直驱、航空航天领域）、工业机器视觉、自动化焊接产线、谐波减速器、精密丝杠、电传动等</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="广电电气 充电桩 碳数字化 光伏逆变器 储能PCS 户储 数字孪生 火电改造 3-6亿 10亿估值"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="广电电气">广电电气</div><div class="buyer-row-need">（1）充电桩（2）碳数字化（3）出海光伏逆变器或储能PCS（4）出海户储（5）配电数字孪生（6）灵活性用电如火电改造。营业收入3-6亿，几千万净利润，估值20亿以内</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="东方中科 电子测试测量 中科院 智慧城市 商业航天 检测"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="东方中科">东方中科</div><div class="buyer-row-need">电子测试测量领域中国科学院下属唯一一家上市公司。目前主要看软件倾向智慧城市，检测偏好商业航天领域</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="万业企业 房地产转型 泛半导体 设备 材料 零部件 3-10亿营收 3000万-1亿利润 20-50亿估值 换股"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="万业企业">万业企业</div><div class="buyer-row-need">房地产公司转型。寻求国内外泛半导体领域（设备、材料、零部件），营收3-10亿，净利润3000万-1亿，估值20-50亿，能接受换股+现金</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="公牛集团 新能源 充电桩 储能 AI 智能灯光 智能锁 扫地机器人 出海 海外"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="公牛集团">公牛集团</div><div class="buyer-row-need">1）新能源：充电桩、储能。2）AI+：智能灯光照明、家用电器、智能锁，布局其他AI+领域。3）出海：海外家居（转换器、开关、智能锁）和新能源新增品类</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="综艺股份 芯片 半导体 设备 原材料 封测 1-3亿营收 1000万利润 5-20亿估值"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="综艺股份">综艺股份</div><div class="buyer-row-need">收购芯片上下游公司，设备、原材料、封测都可以。1-3亿营收，最好1000+w净利润。估值5-20亿都行。老板着急让公司贴上半导体标签</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="TCL 中环 光伏 半导体 晶圆 华星光电 面板 材料 涂胶 显影剂 国产化"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="TCL">TCL</div><div class="buyer-row-need">TCL中环看光伏上下游材料，重点关注半导体领域，明确需要并购半导体晶圆厂（6寸也可以看），10-几十亿。华星光电收购面板上下游，上游材料国产化率都比较低</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="东方电气 能源装备 光伏 组件 电池 机械 新材料 特种陶瓷 5亿"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="东方电气">东方电气</div><div class="buyer-row-need">收购能源装备相关标的，光伏（组件、电池、设备、辅材、支架）、机械、新材料都能看。对价不超过5亿元，动力电池不看，想要特种陶瓷</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="洛阳国资 国宏 宁德时代 新能源 源网荷储 智能电网 电站 50亿市值 非国资"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="洛阳国资-国宏">洛阳国资-国宏</div><div class="buyer-row-need">洛阳宁德时代做招商配套和产业协同。上市公司市值50亿左右，主业新能源类、源网荷储、智能电网类，最好持有电站类资产，非国资控股，非壳公司，非亏损</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="容百科技 电池 冶炼 回收 国内外"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="容百科技">容百科技</div><div class="buyer-row-need">电池冶炼回收，体量不限，国内外都能看</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="方大集团 航空 医药 钢铁 材料 矿石 碳碳 石墨烯 碳纤维 无人机"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="方大集团">方大集团</div><div class="buyer-row-need">关注集团下面航空、医药、钢铁、材料、矿石、商业产业链上下游项目并购。重点：航空维修大型货运无人机、碳碳复合材料、石墨烯、碳纤维</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="海尔 工业互联网 工业软件 机器人 自动化 新时达"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="海尔工业互联网基金">海尔工业互联网基金</div><div class="buyer-row-need">目前并购主要看工业软件（生产制造类）的上市公司；储备机器人、工业自动化领域的标的；25年收购了上市公司新时达</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="陕煤胜帮 生化分析仪 湿电子化学品 显示材料 合成生物 化工 派林生物 尤夫 1000万利润"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="陕煤胜帮">陕煤胜帮</div><div class="buyer-row-need">陕煤下面的投资基金，控股了派林生物和尤夫股份。收购生化分析仪、湿电子化学品、显示材料、合成生物、化工等。净利润1000w+</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="玫德集团 钢管 沟槽管件 阀门 水表 电表 泵 3亿"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="玫德集团">玫德集团</div><div class="buyer-row-need">国内外钢管、沟槽管件、阀门、水表、电表、泵类公司，营收3亿以上为佳</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="达瑞电子 消费电子 手机 声学 MR 碳纤维 复合材料 新能源 汽车电子 连接器 特斯拉 华为 比亚迪"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="达瑞电子">达瑞电子</div><div class="buyer-row-need">方向1：消费电子（手机、声学、MR），复合材料、上游材料、结构件、模组。方向2：新能源（汽车电子、动力电池、储能），结构件、新材料。优先收购汽车高压/高速连接器厂商，需有头部主机厂客户</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="江苏创元集团 江浙沪 洁净环保 汽车零部件 智能制造 轴承 电机 1000万利润"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="江苏创元集团">江苏创元集团</div><div class="buyer-row-need">投资地域：江浙沪。行业范围：洁净环保、汽车零部件、智能制造（如轴承、电机）。净利润1000w+，上市公司和非上市公司都能看</div></div>
-    <div class="buyer-row" data-industry="制造" data-search="锐锢商城 电动工具 园林工具 仪表仪器 照明 工业润滑油 粘合剂 2000万利润"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="锐锢商城">锐锢商城（电商独角兽）</div><div class="buyer-row-need">电动工具、园林工具、仪表仪器、照明、工业润滑油、粘合剂。利润2000万以上</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="汇洲智能 国内不看，海外机床和机器人上下游相关"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="汇洲智能">汇洲智能</div><div class="buyer-row-need">国内不看，海外机床和机器人上下游相关</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="稳健医疗 1、国内低值耗材公司；2、海外低值耗材品牌与有关渠道；3、可集成进入手术包类产品；4、对于生命科学和生物材料比如干细胞、脱细胞等比较感兴趣；更新：今年主要看海外渠道和品牌的公司，国内看高值介入器械及耗材"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="稳健医疗">稳健医疗</div><div class="buyer-row-need">1、国内低值耗材公司；2、海外低值耗材品牌与有关渠道；3、可集成进入手术包类产品；4、对于生命科学和生物材料比如干细胞、脱细胞等比较感兴趣；更新：今年主要看海外渠道和品牌的公司，国内看高值介入器械及耗材</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="英洛华 轮椅、电机等项目收购"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="英洛华">英洛华</div><div class="buyer-row-need">轮椅、电机等项目收购</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="中红医疗 1、有技术含量，且属细分领域头部的低值耗材，优先出口渠道；2、高值耗材（包括骨科植入、血管介入、口腔医用耗材、血液净化类医用耗材）；3、医用医疗设备（包括康复设备、病房护理设备、诊断设备等）；4、体外诊断（包括免疫诊断、分子诊断和POCT）"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="中红医疗">中红医疗</div><div class="buyer-row-need">1、有技术含量，且属细分领域头部的低值耗材，优先出口渠道；2、高值耗材（包括骨科植入、血管介入、口腔医用耗材、血液净化类医用耗材）；3、医用医疗设备（包括康复设备、病房护理设备、诊断设备等）；4、体外诊断（包括免疫诊断、分子诊断和POCT）</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="澳柯玛 制冷类要求大型冷库以及与制冷技术有关的标的；小家电要求有前景比如家用机器人，服务机器人；医疗类包括器械和耗材"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="澳柯玛">澳柯玛</div><div class="buyer-row-need">制冷类要求大型冷库以及与制冷技术有关的标的；小家电要求有前景比如家用机器人，服务机器人；医疗类包括器械和耗材</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="天合光能 自身上下游，优先pcs储能逆变器的标的，碳化硅氮化镓，ITO靶材。锂电池及光伏产业链上成熟的产品，技术路线清晰。10亿估值以内，可以亏损。也可以投资，10%+的股份及一个董事会席位，"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="天合光能">天合光能</div><div class="buyer-row-need">自身上下游，优先pcs储能逆变器的标的，碳化硅氮化镓，ITO靶材。锂电池及光伏产业链上成熟的产品，技术路线清晰。10亿估值以内，可以亏损。也可以投资，10%+的股份及一个董事会席位，</div></div>
+    <div class="buyer-row" data-industry="消费" data-search="大胜达 国内看发达城市圈例如珠三角或者京津冀周边的瓦楞纸或者高毛利的包装企业，比如瓦楞纸包、烟包、酒包、消费电子、消费品、化妆品类包装"><div class="buyer-row-industry ind-consume">消费</div><div class="buyer-row-name" data-name="大胜达">大胜达</div><div class="buyer-row-need">国内看发达城市圈例如珠三角或者京津冀周边的瓦楞纸或者高毛利的包装企业，比如瓦楞纸包、烟包、酒包、消费电子、消费品、化妆品类包装</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="中际联合 新能源产业链 发电側（风力、储能、氢能）、电网側（配网、电网相关）的相关机会，有净利润且最好毛利净利率高一些"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="中际联合">中际联合</div><div class="buyer-row-need">新能源产业链 发电側（风力、储能、氢能）、电网側（配网、电网相关）的相关机会，有净利润且最好毛利净利率高一些</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="同仁堂 并购中药饮片的需求：1.收入3亿以上，净利润率10%以上（含），如净利率指标高的话收入可以在2亿以上即可；2.销售渠道相对分散一些，市级销售覆盖不能集中在一两家客户；3.有较强的销售团队和能力，以院内销售为主，如果客户为药厂或药店的需要有些特色。
+并购后，有国资身份集采更有竞争力，同时可以更名为北京同仁堂某某饮片公司，同仁堂在当地的药店可以成为客户。避开亳州和安国的企业"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="同仁堂">同仁堂</div><div class="buyer-row-need">并购中药饮片的需求：1.收入3亿以上，净利润率10%以上（含），如净利率指标高的话收入可以在2亿以上即可；2.销售渠道相对分散一些，市级销售覆盖不能集中在一两家客户；3.有较强的销售团队和能力，以院内销售为主，如果客户为药厂或药店的需要有些特色。
+并购后，有国资身份集采更有竞争力，同时可以更名为北京同仁堂某某饮片公司，同仁堂在当地的药店可以成为客户。避开亳州和安国的企业</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="华润三九 骨科、呼吸、肠胃、妇科、儿科大品种（市场前三）、有市场知名度的独家品种；妇科相关的卫生护理用品，需要品牌比较有知名度"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="华润三九">华润三九</div><div class="buyer-row-need">骨科、呼吸、肠胃、妇科、儿科大品种（市场前三）、有市场知名度的独家品种；妇科相关的卫生护理用品，需要品牌比较有知名度</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="顺丰 狭义物流领域，跟集团主业高度相关，主要包括合同物流、冷链、国际跨境物流等赛道。这几集团年做过的代表性标的包括DHL中国、新夏晖、嘉里物流等，还有一些市场上不太知名的小物流公司"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="顺丰">顺丰</div><div class="buyer-row-need">狭义物流领域，跟集团主业高度相关，主要包括合同物流、冷链、国际跨境物流等赛道。这几集团年做过的代表性标的包括DHL中国、新夏晖、嘉里物流等，还有一些市场上不太知名的小物流公司</div></div>
+    <div class="buyer-row" data-industry="环保" data-search="重庆水务&三峰环境 净利润3000w以上，上市公司非上市公司均可。偏好发达城市。
+围绕“资源化”布局新型环保产业（工业类：工业废水、工业污泥及工业固废资源化、危废资源化、工业废气治理；市政类：餐厨及厨余垃圾处理、再生水、污泥资源化、管网修复管理、医废资源化、建筑装修垃圾资源化、飞灰资源化、炉渣资源化等）；"><div class="buyer-row-industry ind-env">环保</div><div class="buyer-row-name" data-name="重庆水务&三峰环境">重庆水务&三峰环境</div><div class="buyer-row-need">净利润3000w以上，上市公司非上市公司均可。偏好发达城市。
+围绕“资源化”布局新型环保产业（工业类：工业废水、工业污泥及工业固废资源化、危废资源化、工业废气治理；市政类：餐厨及厨余垃圾处理、再生水、污泥资源化、管网修复管理、医废资源化、建筑装修垃圾资源化、飞灰资源化、炉渣资源化等）；</div></div>
+    <div class="buyer-row" data-industry="消费" data-search="洪兴股份 收购内衣/护理/睡眠类资产，有一定品牌知名度，净利润1000万以上，估值五六亿元以下。"><div class="buyer-row-industry ind-consume">消费</div><div class="buyer-row-name" data-name="洪兴股份">洪兴股份</div><div class="buyer-row-need">收购内衣/护理/睡眠类资产，有一定品牌知名度，净利润1000万以上，估值五六亿元以下。</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="厦门建发 海外标的看资源类的，农产品、矿产、纸浆、木材、橡胶等，以及配套的加工、物流仓储资源。比如农产品（大豆、玉米、棕榈油）主要就是巴西、乌克兰、东南亚、非洲等。
+国内也是相关的加工资源、仓储和物流资源，加工包括大豆、菜籽加工厂（类似金龙鱼），小麦、玉米加工厂，钢铁厂、铜冶炼厂、铝厂等等；新能源类：电池厂、硅料厂、光伏厂等"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="厦门建发">厦门建发</div><div class="buyer-row-need">海外标的看资源类的，农产品、矿产、纸浆、木材、橡胶等，以及配套的加工、物流仓储资源。比如农产品（大豆、玉米、棕榈油）主要就是巴西、乌克兰、东南亚、非洲等。
+国内也是相关的加工资源、仓储和物流资源，加工包括大豆、菜籽加工厂（类似金龙鱼），小麦、玉米加工厂，钢铁厂、铜冶炼厂、铝厂等等；新能源类：电池厂、硅料厂、光伏厂等</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="斯迪克 光学显示、新能源电池核心部件
+规模2-5亿元，小一些，不考虑发股；之前固定资产转固后折旧很大，现在现金流不太好"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="斯迪克">斯迪克</div><div class="buyer-row-need">光学显示、新能源电池核心部件
+规模2-5亿元，小一些，不考虑发股；之前固定资产转固后折旧很大，现在现金流不太好</div></div>
+    <div class="buyer-row" data-industry="消费" data-search="58同城 国内这边，看补足交易闭环的，。招聘看技工类、普工类招聘的。有自己的流量池。提高管理的销量的工具。养老服务也看。3c维修。
+
+海外，看主营业务模式类似，要盈利。做高毛利流量分发，类似crecklist，招聘平台或者二手车交易模式。
+
+人民币和美元都有。国内看10亿以内。
+主要业务方向：1. 房产交易，之前收了安居客，观望上市。2. 二手车交易平台，收购了优信，也是瓜子的二股东。3. 生活服务，比如家政，自己孵化了天鹅、快狗、转转。4. 招聘，收购了中华英才网。"><div class="buyer-row-industry ind-consume">消费</div><div class="buyer-row-name" data-name="58同城">58同城</div><div class="buyer-row-need">国内这边，看补足交易闭环的，。招聘看技工类、普工类招聘的。有自己的流量池。提高管理的销量的工具。养老服务也看。3c维修。
+
+海外，看主营业务模式类似，要盈利。做高毛利流量分发，类似crecklist，招聘平台或者二手车交易模式。
+
+人民币和美元都有。国内看10亿以内。
+主要业务方向：1. 房产交易，之前收了安居客，观望上市。2. 二手车交易平台，收购了优信，也是瓜子的二股东。3. 生活服务，比如家政，自己孵化了天鹅、快狗、转转。4. 招聘，收购了中华英才网。</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="京城控股 北京市国企，旗下有A+H上市公司京城股份，主营业务工业母机、液压、气体储运设备、新能源、环保等。
+主要投资方向为机器人（包括伺服、控制、减速器等核心软硬件）、AGV、AMR、机床（尤其是卧加、直驱机床、航空航天领域机床、转台、主轴等机床核心部件）、工业尤其是焊接场景的机器视觉、自动化焊接产线集成、谐波减速器、精密丝杠、电传动等。"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="京城控股">京城控股</div><div class="buyer-row-need">北京市国企，旗下有A+H上市公司京城股份，主营业务工业母机、液压、气体储运设备、新能源、环保等。
+主要投资方向为机器人（包括伺服、控制、减速器等核心软硬件）、AGV、AMR、机床（尤其是卧加、直驱机床、航空航天领域机床、转台、主轴等机床核心部件）、工业尤其是焊接场景的机器视觉、自动化焊接产线集成、谐波减速器、精密丝杠、电传动等。</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="广电电气 （1）充电桩，（2）碳数字化、（3）出海的光伏逆变器或储能PCS，（4）出海的户储，（5）配电数字孪生，（6）灵活性用电如火电改造
+希望大概营业收入3-6亿，几千万净利润，估值51%部分不超过10亿的，也就是对应20亿估值以下"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="广电电气">广电电气</div><div class="buyer-row-need">（1）充电桩，（2）碳数字化、（3）出海的光伏逆变器或储能PCS，（4）出海的户储，（5）配电数字孪生，（6）灵活性用电如火电改造
+希望大概营业收入3-6亿，几千万净利润，估值51%部分不超过10亿的，也就是对应20亿估值以下</div></div>
+    <div class="buyer-row" data-industry="其他" data-search="美能能源 城市天然气公司。同业并购，对于估值、特许经营权年限、售气量、营收
+结构等有相应要求；
+⚫ 冷热电“三联供”项目：清洁供冷、供热以及供电企业；
+⚫ 分布式光伏、储能企业。重点关注分布式光伏、储能资产项目及 EPC 公司；
+商业楼宇用能储能设备综合节能 EPC 公司；
+⚫ 节能降碳设备厂商。重点关注制传统或新型能源基础设施设备节能改造、
+技术升级或替换，锅炉、泵、空调等；关注 IDC 和设备更新概念；
+⚫ 建筑及工业节能服务商。重点关注具备设计、咨询、评估、建设改造、运
+营等综合能力的公司
+
+估值 10 亿人民币以内为宜，城燃标的按控制权交易股权比例计算的对
+价须小于 10 亿,无特殊要求，陕西及长三角优先,看重利润"><div class="buyer-row-industry ind-other">其他</div><div class="buyer-row-name" data-name="美能能源">美能能源</div><div class="buyer-row-need">城市天然气公司。同业并购，对于估值、特许经营权年限、售气量、营收
+结构等有相应要求；
+⚫ 冷热电“三联供”项目：清洁供冷、供热以及供电企业；
+⚫ 分布式光伏、储能企业。重点关注分布式光伏、储能资产项目及 EPC 公司；
+商业楼宇用能储能设备综合节能 EPC 公司；
+⚫ 节能降碳设备厂商。重点关注制传统或新型能源基础设施设备节能改造、
+技术升级或替换，锅炉、泵、空调等；关注 IDC 和设备更新概念；
+⚫ 建筑及工业节能服务商。重点关注具备设计、咨询、评估、建设改造、运
+营等综合能力的公司
+
+估值 10 亿人民币以内为宜，城燃标的按控制权交易股权比例计算的对
+价须小于 10 亿,无特殊要求，陕西及长三角优先,看重利润</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="东方中科 电子测试测量领域中国科学院下属唯一一家上市公司。目前主要看软件倾向智慧城市，检测偏好商业航天领域的检测"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="东方中科">东方中科</div><div class="buyer-row-need">电子测试测量领域中国科学院下属唯一一家上市公司。目前主要看软件倾向智慧城市，检测偏好商业航天领域的检测</div></div>
+    <div class="buyer-row" data-industry="化工" data-search="航天投资控股（中国航天） 精细化工方向，标的体量最好小一些，在10亿元以内；净利润为正；行业在橡胶、胶粘剂、阻燃剂、军工助剂、航天上下游相关范围内"><div class="buyer-row-industry ind-chemical">化工</div><div class="buyer-row-name" data-name="航天投资控股（中国航天）">航天投资控股（中国航天）</div><div class="buyer-row-need">精细化工方向，标的体量最好小一些，在10亿元以内；净利润为正；行业在橡胶、胶粘剂、阻燃剂、军工助剂、航天上下游相关范围内</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="万业企业 房地产公司转型。寻求 国内外 泛半导体领域的（设备，材料，零部件），要求有一定营收和利润（营收3-10亿 ，净利润3000万-1亿），估值20-50亿的愿意被上市公司并购的标的，能接受换股+现金的方式。"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="万业企业">万业企业</div><div class="buyer-row-need">房地产公司转型。寻求 国内外 泛半导体领域的（设备，材料，零部件），要求有一定营收和利润（营收3-10亿 ，净利润3000万-1亿），估值20-50亿的愿意被上市公司并购的标的，能接受换股+现金的方式。</div></div>
+    <div class="buyer-row" data-industry="化工" data-search="盛虹集团 下属上市公司东方盛虹，集团主业是炼化 往下游衍生精细化工 电子材料 等等吧 还挺宽泛的，估值10e内的 产品毛利率30%以上，有一定规模"><div class="buyer-row-industry ind-chemical">化工</div><div class="buyer-row-name" data-name="盛虹集团">盛虹集团</div><div class="buyer-row-need">下属上市公司东方盛虹，集团主业是炼化 往下游衍生精细化工 电子材料 等等吧 还挺宽泛的，估值10e内的 产品毛利率30%以上，有一定规模</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="明德生物 优先考虑IVD方向，凝血免疫分子等，尤其偏好仪器类标的，因为明德试剂较强。营收1亿以上，有利润"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="明德生物">明德生物</div><div class="buyer-row-need">优先考虑IVD方向，凝血免疫分子等，尤其偏好仪器类标的，因为明德试剂较强。营收1亿以上，有利润</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="威高 口腔医疗都在看，正畸，种植，修复，上下游
+体量比较大的，偏后期有收入最好有利润的公司，因为我们自己是有洁利康，所以从产业链上下游或不同产业方向横向都先看看，不一定具体利润必须在多少以上，主要还是看收入和业务情况，主要还是偏后期"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="威高">威高</div><div class="buyer-row-need">口腔医疗都在看，正畸，种植，修复，上下游
+体量比较大的，偏后期有收入最好有利润的公司，因为我们自己是有洁利康，所以从产业链上下游或不同产业方向横向都先看看，不一定具体利润必须在多少以上，主要还是看收入和业务情况，主要还是偏后期</div></div>
+    <div class="buyer-row" data-industry="化工" data-search="中化三建 寻找化工园区，占地百亩左右，涉化的，产品没关系，主要为研究所产品后续商业化找产能。公司运作正常，核心团队能继续经营就好。5亿内的估值，7-8年能回本就行。"><div class="buyer-row-industry ind-chemical">化工</div><div class="buyer-row-name" data-name="中化三建">中化三建</div><div class="buyer-row-need">寻找化工园区，占地百亩左右，涉化的，产品没关系，主要为研究所产品后续商业化找产能。公司运作正常，核心团队能继续经营就好。5亿内的估值，7-8年能回本就行。</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="公牛集团 1）新能源，从转换器转到充电桩、储能。（处于萌芽期，主要看投资）
+2）AI+，智能灯光照明，家用电器，智能锁。布局到其他ai+领域。硬件领域。（之前买过智能开关业务）。最想找的c端机会。2b 2g的业务也看。要更新的方向，新的智能家居，类似当时的扫地机器人。
+3）出海，海外机会看得不多，但是想重点。海外家居（已有产业，转换器、开关、智能锁）和新能源，新增的品类。"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="公牛集团">公牛集团</div><div class="buyer-row-need">1）新能源，从转换器转到充电桩、储能。（处于萌芽期，主要看投资）
+2）AI+，智能灯光照明，家用电器，智能锁。布局到其他ai+领域。硬件领域。（之前买过智能开关业务）。最想找的c端机会。2b 2g的业务也看。要更新的方向，新的智能家居，类似当时的扫地机器人。
+3）出海，海外机会看得不多，但是想重点。海外家居（已有产业，转换器、开关、智能锁）和新能源，新增的品类。</div></div>
+    <div class="buyer-row" data-industry="环保" data-search="兴泸投资 泸州市当地规模最大的一家城投公司，业务主要涵盖公用事业、交通运营、金融服务、城市服务和城市建设，目前的话集团规模已经超过千亿，利润30亿，主要寻求一些垃圾焚烧、固废处置和物业服务的并购项目来扩大我们旗下企业的规模，从而培育企业上市"><div class="buyer-row-industry ind-env">环保</div><div class="buyer-row-name" data-name="兴泸投资">兴泸投资</div><div class="buyer-row-need">泸州市当地规模最大的一家城投公司，业务主要涵盖公用事业、交通运营、金融服务、城市服务和城市建设，目前的话集团规模已经超过千亿，利润30亿，主要寻求一些垃圾焚烧、固废处置和物业服务的并购项目来扩大我们旗下企业的规模，从而培育企业上市</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="综艺股份 收购芯片上下游公司，设备、原材料、封测都可以。1-3亿营收，最好1000+w净利润。估值5-20亿都行。不会卡很死，说老板着急让公司贴上半导体标签。"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="综艺股份">综艺股份</div><div class="buyer-row-need">收购芯片上下游公司，设备、原材料、封测都可以。1-3亿营收，最好1000+w净利润。估值5-20亿都行。不会卡很死，说老板着急让公司贴上半导体标签。</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="中国通用技术 央企，在找机床刀具类或者医用材料类的机会，上市非上市也都行，核心还是看标的的质地，符合IPO条件的当然最好"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="中国通用技术">中国通用技术</div><div class="buyer-row-need">央企，在找机床刀具类或者医用材料类的机会，上市非上市也都行，核心还是看标的的质地，符合IPO条件的当然最好</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="厦门信达 我们信达自己目前三块业务，供应链贸易、汽车贸易、信息科技，看的并购项目主要行业方向以信息科技和先进制造为主，1kw-1亿利润区间.
+具体有：
+1）智慧+产业：通过大数据、人工智能等技术着重围绕供应链贸易、物流仓储、园区楼宇、工程建筑、教育、军工等场景实现数智化的软件或硬件综合解决方案企业；
+2）物联网与先进制造：RFID等智能标签、物联网传感器、工业互联网平台、物联网平台；
+3）信创：企业数字化软件、安全产品与服务、算力基础设施。"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="厦门信达">厦门信达</div><div class="buyer-row-need">我们信达自己目前三块业务，供应链贸易、汽车贸易、信息科技，看的并购项目主要行业方向以信息科技和先进制造为主，1kw-1亿利润区间.
+具体有：
+1）智慧+产业：通过大数据、人工智能等技术着重围绕供应链贸易、物流仓储、园区楼宇、工程建筑、教育、军工等场景实现数智化的软件或硬件综合解决方案企业；
+2）物联网与先进制造：RFID等智能标签、物联网传感器、工业互联网平台、物联网平台；
+3）信创：企业数字化软件、安全产品与服务、算力基础设施。</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="tcl tcl中环看光伏上下游材料，和天合的收购方向比较一致。同时重点关注半导体领域。明确需要并购：半导体晶圆厂，6寸也可以看。10-几十亿。
+
+华星光电收购及投资面板上下游，上游材料，涂胶，显影剂。并购的话，要大产线，面板或者面板上游生产电子元件和硬粉的，面板上游的元件和材料国产化率都比较低。后续团队去验证产品质量和技术。"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="tcl">tcl</div><div class="buyer-row-need">tcl中环看光伏上下游材料，和天合的收购方向比较一致。同时重点关注半导体领域。明确需要并购：半导体晶圆厂，6寸也可以看。10-几十亿。
+
+华星光电收购及投资面板上下游，上游材料，涂胶，显影剂。并购的话，要大产线，面板或者面板上游生产电子元件和硬粉的，面板上游的元件和材料国产化率都比较低。后续团队去验证产品质量和技术。</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="东方电气 收购能源装备相关的并购标的，光伏（组件、电池、设备、辅材、支架）、机械、新材料方面都能看。对价不超过5亿元，并购和投资都可以。动力电池不看，想要特种陶瓷"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="东方电气">东方电气</div><div class="buyer-row-need">收购能源装备相关的并购标的，光伏（组件、电池、设备、辅材、支架）、机械、新材料方面都能看。对价不超过5亿元，并购和投资都可以。动力电池不看，想要特种陶瓷</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="洛阳国资-国宏 洛阳宁德时代做招商配套和产业协同。
+上市公司市值50亿左右，主业新能源类、源网荷储、智能电网类，最好持有电站类资产，地址不限不要求迁址，非国资控股，非壳公司，非亏损。
+洛阳工业控股集团的全资子公司，主要做新能源业务投资并购，董事长 黄小宁，兼赛摩智能董事长"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="洛阳国资-国宏">洛阳国资-国宏</div><div class="buyer-row-need">洛阳宁德时代做招商配套和产业协同。
+上市公司市值50亿左右，主业新能源类、源网荷储、智能电网类，最好持有电站类资产，地址不限不要求迁址，非国资控股，非壳公司，非亏损。
+洛阳工业控股集团的全资子公司，主要做新能源业务投资并购，董事长 黄小宁，兼赛摩智能董事长</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="容百科技 电池冶炼回收，体量不限，国内外都能看"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="容百科技">容百科技</div><div class="buyer-row-need">电池冶炼回收，体量不限，国内外都能看</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="方大集团 方大炭素(600516)方大特钢(600507东北制药(000597)中兴商业(000715)海航控股(600221)
+关注集团下面航空，医药，钢铁，材料，矿石，商业产业链上下游的项目并购
+重点航空维修大型货运无人机。碳碳复合材料、石墨烯、碳纤维"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="方大集团">方大集团</div><div class="buyer-row-need">方大炭素(600516)方大特钢(600507东北制药(000597)中兴商业(000715)海航控股(600221)
+关注集团下面航空，医药，钢铁，材料，矿石，商业产业链上下游的项目并购
+重点航空维修大型货运无人机。碳碳复合材料、石墨烯、碳纤维</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="海尔的工业互联网产业基金 目前并购主要 是看工业软件（生产制造类）的上市公司
+储备机器人 工业自动化领域的标的；25年收购了上市公司新时达"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="海尔的工业互联网产业基金">海尔的工业互联网产业基金</div><div class="buyer-row-need">目前并购主要 是看工业软件（生产制造类）的上市公司
+储备机器人 工业自动化领域的标的；25年收购了上市公司新时达</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="陕煤胜帮 陕煤下面的投资基金。控股了派林生物和尤夫股份。收购生化分析仪，湿电子化学品，显示材料，合成生物，化工等。净利润1000w+"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="陕煤胜帮">陕煤胜帮</div><div class="buyer-row-need">陕煤下面的投资基金。控股了派林生物和尤夫股份。收购生化分析仪，湿电子化学品，显示材料，合成生物，化工等。净利润1000w+</div></div>
+    <div class="buyer-row" data-industry="TMT" data-search="博彦科技 投资和并购标的画像：主营业务是算力运营、IT运维、数据库迁移、ERP等的解决方案，客户是央企国企（能源、制造、航天军工等客户），另智慧农业解决方案，营收在1000万-5000万之间，毛利率不低于30%，净利率在10%左右，大客户主要是大型央企国企，现金投资收购。"><div class="buyer-row-industry ind-tmt">TMT</div><div class="buyer-row-name" data-name="博彦科技">博彦科技</div><div class="buyer-row-need">投资和并购标的画像：主营业务是算力运营、IT运维、数据库迁移、ERP等的解决方案，客户是央企国企（能源、制造、航天军工等客户），另智慧农业解决方案，营收在1000万-5000万之间，毛利率不低于30%，净利率在10%左右，大客户主要是大型央企国企，现金投资收购。</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="玫德集团 国内外钢管，沟槽管件，阀门，水表，电表，泵类公司，营收3亿以上为佳"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="玫德集团">玫德集团</div><div class="buyer-row-need">国内外钢管，沟槽管件，阀门，水表，电表，泵类公司，营收3亿以上为佳</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="达瑞电子 投资/并购/孵化方向1：在消费电子领域，尤其面向手机、声学、MR产业链，关于复合材料（如碳纤维/玻纤）、上游材料（如涂布、胶、膜）、结构件、模组或整机（如TWS耳机）等方向标的。项目阶段不限，盈利不限，最好有消费电子领域优质客户代码（如苹果、华为
+投资/并购/孵化方向2：在新能源领域，尤其面向汽车电子、动力电池、储能产业链，关于结构件（如连接器、天线、功率半导体上游结构件/材料）、新材料应用（如复合材料、胶、膜）、模组（如汽车音响、汽车电子）等方向标的。项目阶段不限，盈利不限，最好有新能源领域优质客户代码（如特斯拉、华为等）。
+
+优先收购或投资汽车高压连接器、高速连接器厂商，其次考虑通讯高速连接器、工控高压连接器; 收购必须要有利润，规模不限，需有头部主机厂客户代码（如特斯拉、华为、比亚迪等）"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="达瑞电子">达瑞电子</div><div class="buyer-row-need">投资/并购/孵化方向1：在消费电子领域，尤其面向手机、声学、MR产业链，关于复合材料（如碳纤维/玻纤）、上游材料（如涂布、胶、膜）、结构件、模组或整机（如TWS耳机）等方向标的。项目阶段不限，盈利不限，最好有消费电子领域优质客户代码（如苹果、华为
+投资/并购/孵化方向2：在新能源领域，尤其面向汽车电子、动力电池、储能产业链，关于结构件（如连接器、天线、功率半导体上游结构件/材料）、新材料应用（如复合材料、胶、膜）、模组（如汽车音响、汽车电子）等方向标的。项目阶段不限，盈利不限，最好有新能源领域优质客户代码（如特斯拉、华为等）。
+
+优先收购或投资汽车高压连接器、高速连接器厂商，其次考虑通讯高速连接器、工控高压连接器; 收购必须要有利润，规模不限，需有头部主机厂客户代码（如特斯拉、华为、比亚迪等）</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="康基医疗（港股） 主要聚焦微创外科，提供相应手术耗材、设备等医疗器械解决方案。产品主要科室是妇科、泌尿、普外、胸外科，目前产品覆盖3500+家医院，其中1000+家三甲。我们投资部围绕公司主营业务，关注有协同性的产品技术方向。偏好：呼吸、消化 一些镜子、外科创新器械、术中影像设备之类的"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="康基医疗（港股）">康基医疗（港股）</div><div class="buyer-row-need">主要聚焦微创外科，提供相应手术耗材、设备等医疗器械解决方案。产品主要科室是妇科、泌尿、普外、胸外科，目前产品覆盖3500+家医院，其中1000+家三甲。我们投资部围绕公司主营业务，关注有协同性的产品技术方向。偏好：呼吸、消化 一些镜子、外科创新器械、术中影像设备之类的</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="江苏创元集团 1、投资地域：江浙沪
+2、行业范围：洁净环保、汽车零部件、智能制造（如轴承、电机）
+3. 净利润1000w+，无上限
+上市公司和非上市公司都能看"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="江苏创元集团">江苏创元集团</div><div class="buyer-row-need">1、投资地域：江浙沪
+2、行业范围：洁净环保、汽车零部件、智能制造（如轴承、电机）
+3. 净利润1000w+，无上限
+上市公司和非上市公司都能看</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="锐锢商城（电商独角兽） 电动工具、园林工具、仪表仪器、照明类等传统制造业公司，利润2千万以上;3000w利润左右的工业润滑油和工业粘合剂工厂"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="锐锢商城（电商独角兽）">锐锢商城（电商独角兽）</div><div class="buyer-row-need">电动工具、园林工具、仪表仪器、照明类等传统制造业公司，利润2千万以上;3000w利润左右的工业润滑油和工业粘合剂工厂</div></div>
+    <div class="buyer-row" data-industry="消费" data-search="顾家家居 客餐厅、卧室空间的相关家具，不智能没问题。盈利区间没有明确要求。"><div class="buyer-row-industry ind-consume">消费</div><div class="buyer-row-name" data-name="顾家家居">顾家家居</div><div class="buyer-row-need">客餐厅、卧室空间的相关家具，不智能没问题。盈利区间没有明确要求。</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="吉晟 上市公司（对价10亿最好）必须要能迁总部的，最好是汽车零部件或者相关的
+出资额1个亿以内，高于1个亿基本走换股等方式，优先汽车零部件，最好是电子电气的，或者有大量的客户的贴片代工厂的，主要目的1.提高整体毛利率；2.摆脱单一大客户问题；3.实现财务报表优化，帮助子公司冲击上市
+有成熟的乘用车客户群体的并购标的，可以大一点，比如5/6亿以内。主要关注汽车仪表、天线、T-BOX、摄像头、各类控制器、传感器、域控制器、微电机等类型的产品，偏硬件终端或者软硬件一体的产品。希望标的公司有比较成熟的乘用车相关的技术、客户和经验，主要看客户和技术或者项目管理能力"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="吉晟">吉晟</div><div class="buyer-row-need">上市公司（对价10亿最好）必须要能迁总部的，最好是汽车零部件或者相关的
+出资额1个亿以内，高于1个亿基本走换股等方式，优先汽车零部件，最好是电子电气的，或者有大量的客户的贴片代工厂的，主要目的1.提高整体毛利率；2.摆脱单一大客户问题；3.实现财务报表优化，帮助子公司冲击上市
+有成熟的乘用车客户群体的并购标的，可以大一点，比如5/6亿以内。主要关注汽车仪表、天线、T-BOX、摄像头、各类控制器、传感器、域控制器、微电机等类型的产品，偏硬件终端或者软硬件一体的产品。希望标的公司有比较成熟的乘用车相关的技术、客户和经验，主要看客户和技术或者项目管理能力</div></div>
+    <div class="buyer-row" data-industry="TMT" data-search="鼎捷软件 营收5千万以上的数字化软件，具备较好的客户资源"><div class="buyer-row-industry ind-tmt">TMT</div><div class="buyer-row-name" data-name="鼎捷软件">鼎捷软件</div><div class="buyer-row-need">营收5千万以上的数字化软件，具备较好的客户资源</div></div>
+    <div class="buyer-row" data-industry="消费" data-search="海南农垦 价格敏感；食品加工的 希望能有全国渠道布局；营收2亿元以上、经营稳定、有自己的技术实力的种业公司；橡胶产业链标的，10亿营收以上为佳。优先上市公司"><div class="buyer-row-industry ind-consume">消费</div><div class="buyer-row-name" data-name="海南农垦">海南农垦</div><div class="buyer-row-need">价格敏感；食品加工的 希望能有全国渠道布局；营收2亿元以上、经营稳定、有自己的技术实力的种业公司；橡胶产业链标的，10亿营收以上为佳。优先上市公司</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="五矿产投 和五矿集团（以金属矿业、冶金建设为主业）的主责主业有强协同~主要看新材料领域项目，如金属材料（如小金属材料、靶材、高端合金、硬质合金等）、高端氟化工材料以及跟矿山相关的材料应用领域，要求标的盈利。"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="五矿产投">五矿产投</div><div class="buyer-row-need">和五矿集团（以金属矿业、冶金建设为主业）的主责主业有强协同~主要看新材料领域项目，如金属材料（如小金属材料、靶材、高端合金、硬质合金等）、高端氟化工材料以及跟矿山相关的材料应用领域，要求标的盈利。</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="好利来科技 电路电力保护、光伏储能、新能源汽车部件、人工智能、具身机器人、集成电路、新材料等科技领域，以先进制造业为主要目标，标的公司应有适当规模，轻资产审慎考虑
+整体估值4亿以内;PE为6-8倍左右"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="好利来科技">好利来科技</div><div class="buyer-row-need">电路电力保护、光伏储能、新能源汽车部件、人工智能、具身机器人、集成电路、新材料等科技领域，以先进制造业为主要目标，标的公司应有适当规模，轻资产审慎考虑
+整体估值4亿以内;PE为6-8倍左右</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="新里程集团 1. 医药类、医疗器械类上市公司控股权并购：A股医药类上市公司及A或H股医疗器械类上市公司控股权并购机会，希望底层资产优质、可持续运营，上市公司已有风险可以化解，通过适当的机会（协转、定增、重整等方式）获得控股权，市值50亿以下；
+2. 医疗器械类：诊断设备、治疗设备、康复设备，最好有利润（2000万左右或更多）；
+3. 医药类一级市场项目并购：成熟优质的中成药企业中成药，有品种优势，最好有独家品种；
+4. 医疗服务类一级市场并购：省会及中心城市的三级以上营利性医疗机构，收入规模超过2亿，盈利；  
+5. 具身智能机器人本体：已在康复、养老等医疗场景应用的或针对该细分领域的机器人本体项目。"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="新里程集团">新里程集团</div><div class="buyer-row-need">1. 医药类、医疗器械类上市公司控股权并购：A股医药类上市公司及A或H股医疗器械类上市公司控股权并购机会，希望底层资产优质、可持续运营，上市公司已有风险可以化解，通过适当的机会（协转、定增、重整等方式）获得控股权，市值50亿以下；
+2. 医疗器械类：诊断设备、治疗设备、康复设备，最好有利润（2000万左右或更多）；
+3. 医药类一级市场项目并购：成熟优质的中成药企业中成药，有品种优势，最好有独家品种；
+4. 医疗服务类一级市场并购：省会及中心城市的三级以上营利性医疗机构，收入规模超过2亿，盈利；  
+5. 具身智能机器人本体：已在康复、养老等医疗场景应用的或针对该细分领域的机器人本体项目。</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="康尼电机 主要关注新能源汽车零部件的机会，如高速高频连接器、电机、控制等产品，标的公司需要有核心竞争力。
+净利润2kw-1亿区间"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="康尼电机">康尼电机</div><div class="buyer-row-need">主要关注新能源汽车零部件的机会，如高速高频连接器、电机、控制等产品，标的公司需要有核心竞争力。
+净利润2kw-1亿区间</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="创维投资 专注于对新一代信息技术和新能源两个行业上游关键元器件、材料和装备三个领域的投资，坚持投懂、投精、投实、投稳的投资原则，深行研、精投资、严风控、强赋能、重投后。打造新型显示、能源电子、物联网上游产业链三个特色优势投资领域。"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="创维投资">创维投资</div><div class="buyer-row-need">专注于对新一代信息技术和新能源两个行业上游关键元器件、材料和装备三个领域的投资，坚持投懂、投精、投实、投稳的投资原则，深行研、精投资、严风控、强赋能、重投后。打造新型显示、能源电子、物联网上游产业链三个特色优势投资领域。</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="广州数科 计划在集团上市公司之外打造新的产业板块。
+三个方向，数字安全、医疗、空天产业。去年并购了两个数字安全公司。
+今年的重点是医疗板块，除了药不看，器械、信息化和服务方向的都可以，要有两三千万利润的。全国都可以，广东的优先考虑。"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="广州数科">广州数科</div><div class="buyer-row-need">计划在集团上市公司之外打造新的产业板块。
+三个方向，数字安全、医疗、空天产业。去年并购了两个数字安全公司。
+今年的重点是医疗板块，除了药不看，器械、信息化和服务方向的都可以，要有两三千万利润的。全国都可以，广东的优先考虑。</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="和利时 最近我们也有比较多收购的意愿。假如你那里有变频器的收购项目，或者从倍福团队出来创业的项目，你也可以推我看看
+国铁的智能运维是新的是一个市场机会，做大规模的没有，小的有一些，你要是碰到就发我呀
+然后假如有做什么风电、半导体PLC或者一些你觉得不错的自动化项目，都可以发我"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="和利时">和利时</div><div class="buyer-row-need">最近我们也有比较多收购的意愿。假如你那里有变频器的收购项目，或者从倍福团队出来创业的项目，你也可以推我看看
+国铁的智能运维是新的是一个市场机会，做大规模的没有，小的有一些，你要是碰到就发我呀
+然后假如有做什么风电、半导体PLC或者一些你觉得不错的自动化项目，都可以发我</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="珍视明 并购估值1亿以上，上不封顶。超过10亿估值需要换股
+1. 滴眼液标的，规模、估值都可谈，偏好otc
+2. 泛眼科标的，需要有利润，产品型公司，估值倍数10-15x P/E左右
+3. 五官科以及皮肤科，需要有利润，产品型公司，估值倍数合理"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="珍视明">珍视明</div><div class="buyer-row-need">并购估值1亿以上，上不封顶。超过10亿估值需要换股
+1. 滴眼液标的，规模、估值都可谈，偏好otc
+2. 泛眼科标的，需要有利润，产品型公司，估值倍数10-15x P/E左右
+3. 五官科以及皮肤科，需要有利润，产品型公司，估值倍数合理</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="浦东科创 浦东科创集团旗下的国资并购基金，主要覆盖几大板块，集成电路，高端制造，航空航天和生物医药
+优先半导体吧，最好净利润在5000万以上"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="浦东科创">浦东科创</div><div class="buyer-row-need">浦东科创集团旗下的国资并购基金，主要覆盖几大板块，集成电路，高端制造，航空航天和生物医药
+优先半导体吧，最好净利润在5000万以上</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="欣旺达 锂电池上游原材料、消费3c方向智能硬件，域控制器。投资并购都可以看"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="欣旺达">欣旺达</div><div class="buyer-row-need">锂电池上游原材料、消费3c方向智能硬件，域控制器。投资并购都可以看</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="领益 收购需求：最看重客户，规模营收五千万以上就ok，亏损也行，主要客户要好
+AR模组方向ODM
+AI服务器ODM（更关注）（要求要有设计能力）
+
+投资需求：
+商业航天硬件，电池"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="领益">领益</div><div class="buyer-row-need">收购需求：最看重客户，规模营收五千万以上就ok，亏损也行，主要客户要好
+AR模组方向ODM
+AI服务器ODM（更关注）（要求要有设计能力）
+
+投资需求：
+商业航天硬件，电池</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="广电计量 体量稍微大点的标的。与计量检测相关
+体量大的和我们相关性的要求可以适当小点（无相关性也不行）"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="广电计量">广电计量</div><div class="buyer-row-need">体量稍微大点的标的。与计量检测相关
+体量大的和我们相关性的要求可以适当小点（无相关性也不行）</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="超晶科技 金属材料同业或者下游，3kw净利润内，"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="超晶科技">超晶科技</div><div class="buyer-row-need">金属材料同业或者下游，3kw净利润内，</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="元禾控股 并购看机床、刀具、工控软件等。投资要求单笔投资额最好不低于1亿"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="元禾控股">元禾控股</div><div class="buyer-row-need">并购看机床、刀具、工控软件等。投资要求单笔投资额最好不低于1亿</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="鸿合科技 奇瑞基金收购，看收购主业相关及新质生产力并购，投资只看新质生产力"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="鸿合科技">鸿合科技</div><div class="buyer-row-need">奇瑞基金收购，看收购主业相关及新质生产力并购，投资只看新质生产力</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="震坤行 自动化工具、黏胶、刀具。净利润1kw以上，营收3-10亿。对价不超过10亿"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="震坤行">震坤行</div><div class="buyer-row-need">自动化工具、黏胶、刀具。净利润1kw以上，营收3-10亿。对价不超过10亿</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="华脉科技 主业光纤相关，4kw净利润以上为优"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="华脉科技">华脉科技</div><div class="buyer-row-need">主业光纤相关，4kw净利润以上为优</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="北汽产投 新质生产力投资，不做并购"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="北汽产投">北汽产投</div><div class="buyer-row-need">新质生产力投资，不做并购</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="祥生医疗 超声影像设备"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="祥生医疗">祥生医疗</div><div class="buyer-row-need">超声影像设备</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="吉利-碧鸿 新质生产力投资"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="吉利-碧鸿">吉利-碧鸿</div><div class="buyer-row-need">新质生产力投资</div></div>
+    <div class="buyer-row" data-industry="消费" data-search="文昌鸡 黄羽鸡，黄羽鸡餐饮"><div class="buyer-row-industry ind-consume">消费</div><div class="buyer-row-name" data-name="文昌鸡">文昌鸡</div><div class="buyer-row-need">黄羽鸡，黄羽鸡餐饮</div></div>
+    <div class="buyer-row" data-industry="消费" data-search="华宝 调味品、保健品原料"><div class="buyer-row-industry ind-consume">消费</div><div class="buyer-row-name" data-name="华宝">华宝</div><div class="buyer-row-need">调味品、保健品原料</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="莲花健康 ai服务相关"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="莲花健康">莲花健康</div><div class="buyer-row-need">ai服务相关</div></div>
+    <div class="buyer-row" data-industry="消费" data-search="鸭鸭 内衣相关，要求有品牌"><div class="buyer-row-industry ind-consume">消费</div><div class="buyer-row-name" data-name="鸭鸭">鸭鸭</div><div class="buyer-row-need">内衣相关，要求有品牌</div></div>
+    <div class="buyer-row" data-industry="医疗" data-search="德福资本 医疗、营养品、保健品，控股权收购为主，喜欢大标的，可帮忙出海"><div class="buyer-row-industry ind-medical">医疗</div><div class="buyer-row-name" data-name="德福资本">德福资本</div><div class="buyer-row-need">医疗、营养品、保健品，控股权收购为主，喜欢大标的，可帮忙出海</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="国际精密 泵马达及精密制造相关，投资并购均可"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="国际精密">国际精密</div><div class="buyer-row-need">泵马达及精密制造相关，投资并购均可</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="凯辉资本 传统制造业看现金类产业，pe 6-8x不用对赌，新质生产力也看"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="凯辉资本">凯辉资本</div><div class="buyer-row-need">传统制造业看现金类产业，pe 6-8x不用对赌，新质生产力也看</div></div>
+    <div class="buyer-row" data-industry="消费" data-search="周黑鸭 热卤连锁门店/长保肉类零售，营收2亿+，有利润"><div class="buyer-row-industry ind-consume">消费</div><div class="buyer-row-name" data-name="周黑鸭">周黑鸭</div><div class="buyer-row-need">热卤连锁门店/长保肉类零售，营收2亿+，有利润</div></div>
+    <div class="buyer-row" data-industry="消费" data-search="紫燕百味鸡 连锁餐饮/创新零售，优先海外渠道，投资并购都看"><div class="buyer-row-industry ind-consume">消费</div><div class="buyer-row-name" data-name="紫燕百味鸡">紫燕百味鸡</div><div class="buyer-row-need">连锁餐饮/创新零售，优先海外渠道，投资并购都看</div></div>
+    <div class="buyer-row" data-industry="环保" data-search="德润环境 垃圾焚烧或者污水处理项目，优先省会城市。净利润3000w以上为佳"><div class="buyer-row-industry ind-env">环保</div><div class="buyer-row-name" data-name="德润环境">德润环境</div><div class="buyer-row-need">垃圾焚烧或者污水处理项目，优先省会城市。净利润3000w以上为佳</div></div>
+    <div class="buyer-row" data-industry="制造" data-search="德固特 设备类公司，有一定技术门槛。净利润大一些，寻找第二主业"><div class="buyer-row-industry ind-manufacture">制造</div><div class="buyer-row-name" data-name="德固特">德固特</div><div class="buyer-row-need">设备类公司，有一定技术门槛。净利润大一些，寻找第二主业</div></div>
   </div>
 </section>
 
