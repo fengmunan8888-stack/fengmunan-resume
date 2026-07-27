@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -8,16 +8,6 @@
 :root{--bg:#08080d;--card:#101018;--card-hover:#181824;--accent:#c9a96e;--accent2:#8b6f47;--accent-glow:rgba(201,169,110,0.15);--text:#e8e6e3;--text-dim:#7a7a8a;--border:#1e1e2e;--green:#4ade80;--red:#f87171;--blue:#60a5fa;--purple:#a78bfa;--orange:#fb923c;--gold-gradient:linear-gradient(135deg,#c9a96e 0%,#e8d5a8 50%,#c9a96e 100%)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
-#password-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:9999;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:opacity .5s}
-#password-overlay.hidden{opacity:0;pointer-events:none}
-.pw-title{font-size:1.8rem;font-weight:200;color:var(--accent);letter-spacing:.3em;margin-bottom:12px}
-.pw-sub{color:var(--text-dim);font-size:.85rem;margin-bottom:40px;letter-spacing:.08em}
-.pw-input-wrap{position:relative;width:280px}
-.pw-input{width:100%;padding:12px 50px 12px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;outline:none;letter-spacing:.1em}
-.pw-input:focus{border-color:var(--accent2)}
-.pw-btn{position:absolute;right:4px;top:50%;transform:translateY(-50%);background:var(--accent);color:var(--bg);border:none;border-radius:6px;padding:8px 14px;font-size:.85rem;cursor:pointer;font-weight:600}
-.pw-btn:hover{background:#d4b87a}
-.pw-error{color:var(--red);font-size:.78rem;margin-top:12px;height:20px}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 20px;position:relative;background:radial-gradient(ellipse at 50% 20%,rgba(201,169,110,.06) 0%,transparent 60%)}
 .hero::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
 .hero-name{font-size:4rem;font-weight:300;letter-spacing:.5em;color:var(--accent);margin-bottom:16px}
@@ -137,20 +127,7 @@ section{max-width:1200px;margin:0 auto;padding:100px 24px}
 </head>
 <body>
 
-<div id="password-overlay">
-  <div class="pw-title">冯 木 楠</div>
-  <div class="pw-sub">请输入访问密码</div>
-  <div class="pw-input-wrap">
-    <input type="password" class="pw-input" id="pwInput" placeholder="请输入密码" onkeypress="if(event.key==='Enter')checkPassword()">
-    <button class="pw-btn" onclick="checkPassword()">进入</button>
-  </div>
-  <div class="pw-error" id="pwError"></div>
-</div>
-<script>
-const CORRECT_PASSWORD='202607';
-function checkPassword(){const i=document.getElementById('pwInput').value;const e=document.getElementById('pwError');if(i===CORRECT_PASSWORD){document.getElementById('password-overlay').classList.add('hidden');document.body.style.overflow='auto'}else{e.textContent='密码错误，请重试';document.getElementById('pwInput').value='';document.getElementById('pwInput').focus()}}
 
-</script>
 
 <div class="hero">
   <div class="hero-name">冯 木 楠</div>
